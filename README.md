@@ -1,2 +1,2 @@
 # Trolland
-C'est le troll
+Ce jeu va être génial
