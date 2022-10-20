@@ -1,0 +1,65 @@
+STAT RANGE :
+
+DEF : 0-99 (100)
+ATQ : 1-1000
+HP : 1-2000
+MP : 5-100
+STA : 5-100
+LVL : 0-100
+
+POWER EQUATION :
+
+off_pow : SCA * ATQ + (MP or STA) * ATQ 
+dmg : HP - (off_pow - DEF % off_pow)  
+
+SPELLS :
+
+- Fireball
+- Explosion
+- Dante's Wrath
+- Water Blade
+- Tsunami
+- Divine Water Purge
+
+ATTACKS :
+
+- AOE
+- AOE+
+- AOE++
+- DMG 
+- DMG+ 
+- DMG++ 
+
+WEAPONS (can hold 1 at a time) : 
+
+EASTER EGG TIER:
+- Hugo's Wives (DEF +100)
+- Paul's Cum Shield (DEF +25, All damage received is returned to attacker and doubled)
+- Maël's Schlong (STA +95, ATQ +700, attacks all enemies on the battlefield at once)
+- Arty's Pride-book (MP +95, ATQ +700, stuns all enemies after every attack)
+
+
+ARCANIC TIER:
+- Purgatory's Door (DEF +50, will return 20% of the damage to the attacker)
+- Divine blade of light (STA +75, ATQ +100, damage is doubled if attackor has more than 50% HP left)
+- Satan's Prophecy  (MP +75, ATQ +100, inflicts curse on attacked that drains 20% of their MAX_HP per turn)
+
+RELIC TIER:
+- Troll King's Shield (DEF +35, damage has a 25% chance to be ignored) 
+- Conquerer's Sword (STA +50, ATQ +50, if there is a single enemy, damage is doubled)
+- Elf King's Epitome (MP +50, ATQ +50, if there are multiple enemies, all enemies in battle have a 25% chance to be stunned)
+
+HERO TIER:
+- Shield of Faith (DEF +25, defence has a 10% chance to be doubled)
+- Michael's Sword (STA +20, ATQ +40, attack has a 10% chance to be doubled)
+- Dantalion's Anti-Bible (MP +20, ATQ +40)
+
+RARE TIER:
+- Priest's Shield (DEF +10)
+- Blacksmith's Sword (STA +5, ATQ +10)
+- Magical Tome (MP +5, ATQ +10)
+
+COMMON TIER: 
+- Wooden Shield
+- Wooden Sword 
+- Old Grimoire 
