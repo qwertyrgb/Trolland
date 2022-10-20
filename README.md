@@ -1,2 +1,2 @@
 # Trolland
-C'est le trol
+C'est le troll
