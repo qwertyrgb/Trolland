@@ -3,14 +3,14 @@ STAT RANGE :
 DEF : 0-99 (100)
 ATQ : 1-1000
 HP : 1-2000
-MP : 5-100
-STA : 5-100
+MP : 5-100   #explique
+STA : 5-100   #explique
 LVL : 0-100
 
 POWER EQUATION :
 
-off_pow : SCA * ATQ + (MP or STA) * ATQ 
-dmg : HP - (off_pow - DEF % off_pow)  
+off_pow : SCA * ATQ + (MP or STA) * ATQ   #explique 
+dmg : HP - (off_pow - DEF % off_pow)      #explique
 
 SPELLS :
 
@@ -23,7 +23,7 @@ SPELLS :
 
 ATTACKS :
 
-- AOE
+- AOE    #explique
 - AOE+
 - AOE++
 - DMG 
@@ -34,10 +34,14 @@ WEAPONS (can hold 1 at a time) :
 
 EASTER EGG TIER:
 - Hugo's Wives (DEF +100)
-- Paul's Cum Shield (DEF +25, All damage received is returned to attacker and doubled)
+- Paul's Cum Shield (DEF +25, All damage received is returned to attacker and doubled)  # atq ×2 puis calc ou dmg×2?
 - Maël's Schlong (STA +95, ATQ +700, attacks all enemies on the battlefield at once)
 - Arty's Pride-book (MP +95, ATQ +700, stuns all enemies after every attack)
 
+#Suggestions:
+- Rework: Hugo's Wives (one in three chance of ignoring enemy attacks)
+- Add: Santi's passport (HP +100)
+- Add: shirAko's Penetration Cum Blast (spawns minors on the battlefield)
 
 ARCANIC TIER:
 - Purgatory's Door (DEF +50, will return 20% of the damage to the attacker)
