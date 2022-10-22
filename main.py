@@ -1,6 +1,14 @@
 ## ! WELCOME TO TROLLAND !
 ## 🄯 Copyleft 2022 - All wrongs reversed to Lamereary Industries - ширАко and SoulTaker
 
+lang=input('Language, Langue, Lengua? ').lower() #demande la langue, logique, puis la met en minuscule
+if lang in ['es','español','espanol']:
+  from dialogue_es import * #si c'est espa, importe les dialogues espa
+elif lang in ['fr','français','fr']:
+  from dialogue_fr import *
+else: 
+  from dialogue_en import * #Anglais par défaut
+
 class Weapons: # définit toutes les armes du jeu
   def __init__(self,tier,name,description,bonus=''): # Pas forcément de bonus, d'ou le bonus='' (si aucune valeur n'est donnée, bonus sera '')
     '''Initialise ( __init__ ) les armes du jeu'''
