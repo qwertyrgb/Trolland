@@ -44,7 +44,7 @@ EASTER EGG TIER:
 
 ARCANIC TIER:
 - Purgatory's Door (DEF +50, will return 20% of the damage to the attacker)
-- Divine blade of light (STA +75, ATQ +100, damage is doubled if attackor has more than 50% HP left)
+- Divine Blade of Light (STA +75, ATQ +100, damage is doubled if attackor has more than 50% HP left)
 - Satan's Prophecy  (MP +75, ATQ +100, inflicts curse on attacked that drains 20% of their MAX_HP per turn)
 
 RELIC TIER:
