@@ -1,6 +1,8 @@
 ## ! WELCOME TO TROLLAND !
 ## 🄯 Copyleft 2022 - All wrongs reversed to Lamereary Industries - ширАко and SoulTaker
 
+from random import randint
+
 lang=input('Language, Langue, Lengua? ').lower() #demande la langue, puis met l'input en minuscule
 if lang in ['es','español','espanol']:
   from dialogue_es import * #si c'est espa, importe les dialogues espa
@@ -8,6 +10,38 @@ elif lang in ['fr','français','francais']:
   from dialogue_fr import *
 else: 
   from dialogue_en import * #Anglais par défaut
+
+global Enemies
+#Exemple de la variable enemies, les enemis actuellement présents en combat
+Enemies=[Troll1,Troll2,High_Elf1,Your_Mum]
+
+# Définition des fonctions qui affectent les stats avec les armes
+# Comme par exemple 'defence has a 10% chance to be doubled'
+
+def faith_shield_fun(Player): #voir power-system.txt
+  if randint(1,10)==1: # 10% de chance de doubler la défense
+    Player.def*=2
+
+def michael_sword_fun(Player):
+  if randint(1,10)==1: #10% de chance de doubler l'attaque
+    Player.atq*=2
+
+def trollking_shield_fun(Player):
+  if randint(1,4)==1: #25% de chance de ne pas recevoir de dégats <=> def=100
+    Player.def=100
+
+def conquerer_sword_fun(Player): # Conquerer's sword
+  if len(Enemies)==1: #Si il n'y a qu'un seul ennemi
+    Player.dmg*=2 # OU ALORS ATQ
+
+def elfking_epitome_fun(Player):
+  if Enemies_Number>1: #plusieurs enemis
+    for i in Enemis:
+      if randint(1,4)==1: # 25% de chance de stun
+        i.stun()
+
+#def purgatory_door_fun(Player):
+
 
 class Weapons: # définit toutes les armes du jeu
   def __init__(self,tier,name,description,bonus={}): # Pas forcément de bonus, d'ou le bonus={} (si aucune valeur n'est donnée, bonus sera {})
@@ -23,8 +57,8 @@ class Weapons: # définit toutes les armes du jeu
 
 Magical_Tome=Weapons(Rare_Tier,Magical_Tome_Name,Magical_Tome_Description,{'MP':5, 'ATQ':10}) #voir power-system.txt + dialogue_en.py
 # Pour les nuls:
-# Dans la ligne 14, ce que je fais c'est initialiser une nouvelle arme
-# J'appelle donc la fontion __init__ (ligne 5)
+# Dans la ligne 58, ce que je fais c'est initialiser une nouvelle arme
+# J'appelle donc la fontion __init__ (ligne 47)
 # J'ais mis self commme paramètre, dans ce cas self c'est Magical_Tome
 # tier, name, description, bonus
 # tier: Rare_Tier, variable importée par dialogue_en, dialogue_es ou dialogue_fr 'Rare', ou 'Raro' dépendant de la langue choisie
@@ -32,7 +66,7 @@ Magical_Tome=Weapons(Rare_Tier,Magical_Tome_Name,Magical_Tome_Description,{'MP':
 # description: variable de langue
 # bonus: {'MP':5, 'ATQ':10}
 # Si on demande print(Magical_Tome.bonus) ça met {'MP':5}    print(Magical_Tome.tier) affiche 'Rare' ou 'Raro' etc.
-# Puis ligne 12, la fonction info
+# Puis ligne 54, la fonction info
 # S'utilise sous la forme Magical_Tome.info()    (C'est une fonction)
 # Magical_tome.info() en anglais donne:
 '''
@@ -41,11 +75,20 @@ This weapon does emotional damage
 MP: +5  ATQ:+10
 '''
 
-Wooden_Shield=Weapons(Tier_Common,Wooden_Shield_Name,Wooden_Shield_Description) #pas de bonus
-
+Wooden_Shield=Weapons(Common_Tier,Wooden_Shield_Name,Wooden_Shield_Description) #pas de bonus dans power-system.txt
+Wooden_Sword=Weapons(Common_Tier,Wooden_Sword_Name,Wooden_Sword_Description)
+Old_Grimoire=Weapons(Common_Tier,Old_Grimoire_Name,Old_Grimoire_Description)
+Priest_Shield=Weapons(Rare_Tier,Priest_Shield_Name,Priest_Shield_Description,{'DEF':10})
+Blacksmith_Sword=Weapons(Rare_Tier,Blacksmith_Sword_Name,Blacksmith_Sword_Description,{'STA':5,'ATQ':10})
+Faith_Shield=Weapons(Hero_Tier,Faith_Shield_Name,Faith_Shield_Description,{'DEF':25,'FUN':faith_shield_fun})
+# 'FUN': fonction qui s'applique à chaque attaque, dans Faith_Shield la défense à une chance sur 10 de doubler (ligne 21)
+Michael_Sword=Weapons(Hero_Tier,Michael_Sword_Name,Michael_Sword_Description,{'STA':20,'ATQ':40,'FUN':michael_sword_fun})
+Dantalion_Anti_Bible=Weapons(Hero_Tier,Dantalion_Anti_Bible_Name,Dantalion_Anti_Bible_Description,{'MP':20,'ATQ':10})
 
 try: #import basique de sauvegarde
   from saves import *
   Weapon=eval(Weapon)
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=''
+
+print(Welcome)#le message de bonsoir dans la langue choisie (input de ligne 6)
