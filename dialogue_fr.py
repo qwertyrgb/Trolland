@@ -6,6 +6,7 @@ Rare_Tier='Rare'
 Hero_Tier='Heroïque'
 Relic_Tier='Relique'
 Arcanic_Tier='Arcanique'
+Easter_Egg_Tier='Easter Egg'
 
 # Les armes
 Wooden_Shield_Name='Bouclier en bois'
