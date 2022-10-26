@@ -10,7 +10,7 @@ LVL : 0-100
 POWER EQUATION :
 
 off_pow : SCA * ATQ + (MP or STA) * ATQ
-dmg : HP - (off_pow - DEF % off_pow)
+dmg : HP - (off_pow - DEF/100 * off_pow)
 
 SPELLS :
 
