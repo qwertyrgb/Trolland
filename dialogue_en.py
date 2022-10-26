@@ -40,5 +40,12 @@ Divine_Light_Blade_Description=''
 Satan_Profecy_Name="Satan's Profecy"
 Satan_Profecy_Description=''
 Hugo_Wives_Name="Hugo's Wifes"
+Hugo_Wives_Description=''
+Paul_Cum_Shield_Name="Paul's Cum Shield"
+Paul_Cum_Shield_Description=''
+Mael_Schlong_Name="Maël's Schlong"
+Mael_Schlong_Description=''
+Arty_Pride_Book_Name="Arty's Pride Book"
+Arty_Pride_Book_Description=''
 
 Welcome="Welcome to Trolland, this is a solely console high fantasy game with a cool storyline and a bunch of fights."
