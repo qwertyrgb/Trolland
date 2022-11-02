@@ -49,3 +49,17 @@ Arty_Pride_Book_Name="Arty's Pride Book"
 Arty_Pride_Book_Description=''
 
 Welcome="Welcome to Trolland, this is a solely console high fantasy game with a cool storyline and a bunch of fights."
+
+
+#ACTION TYPES :
+
+#"desc" - description - (x) - console talking to player, decribing environment
+#"oSay" - other Say - (a,b) - character talking, content 
+#"pSay" - player Say - (a) - main character speaking 
+#"cmbt" - combat - (a,[b]) - fight description, opponent list
+#"askP" - ask Player - (a, b, c, d, e, f, g) - prompt description, options (1:6)
+
+#VAR NAME : (act-type + chapter + index) - ex : pSay1_12="artur est nul"
+
+#ARC 1 : Tutorial Village 
+
