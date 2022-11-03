@@ -71,7 +71,9 @@ Shirako_Torhub_Name="ShirAko's TorHub"
 Shirako_Torhub_Acess="torhub.onion//is69superior"
 Shirako_Torhub_Description="A curse that will make life much harder"
 Shirako_Torhub_fun="All damage received is returned to attacker and doubled"
-
+Lunis_Iphone_Name="Lunis' iPhone"
+Lunis_Iphone_Access="6pay-more/less-quality9"
+Lunis_Iphone_Description="Don't buy iPhones kids"
 
 Welcome="Welcome to Trolland, this is a solely console high fantasy game with a cool storyline and a bunch of fights."
 
