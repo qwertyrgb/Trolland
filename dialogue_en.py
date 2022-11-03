@@ -69,14 +69,12 @@ Welcome="Welcome to Trolland, this is a solely console high fantasy game with a 
 default_ask="What do you chose to do?"
 
 #ARC 1 : Tutorial Village 
-
-desc1_1_room="You wake up in a dark room, you light a candle. You are home in your room, there are old books in the library on your left, and a staircase going down on your right."
-askP1_2_room=[default_ask, "Go downstairs", "Look at the books"]
-qOut1_3_room=[a, desc1_4_books]
-
-desc1_4_books="You see three heavy books"
-askP1_5_books=['Read "The Holy Guide"', 'Read "History of Trolland"', 'Read "The Science of Magic"']
-qOut1_6_books=[desc1_7_holyGuide, desc1_8_history, desc1_9_magicScience]
-desc1_7_holyGuide=""
-desc1_8_history=""
 desc1_9_magicScience=""
+desc1_8_history=""
+desc1_7_holyGuide=""
+qOut1_6_books=[desc1_7_holyGuide, desc1_8_history, desc1_9_magicScience]
+askP1_5_books=['Read "The Holy Guide"', 'Read "History of Trolland"', 'Read "The Science of Magic"']
+desc1_4_books="You see three heavy books"
+qOut1_3_room=[a, desc1_4_books]
+askP1_2_room=[default_ask, "Go downstairs", "Look at the books"]
+desc1_1_room="You wake up in a dark room, you light a candle. You are home in your room, there are old books in the library on your left, and a staircase going down on your right."
