@@ -143,7 +143,7 @@ def psay(msg):
 	      \|
 '''.format(msg))
 
-def psay(msg):
+def osay(msg):
 	print('''
   -------------
   |           |
