@@ -135,16 +135,16 @@ print(Welcome)#le message de bonsoir dans la langue choisie (input de ligne 6)
 def psay(msg):
 	print('''
        ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
-       ∥           {msg1}           ∥
-       ∥           {msg1}           ∥
-       ∥           {msg1}           ∥
-       ∥           {msg1}           ∥
-       ∥           {msg1}           ∥
-       ∥           {msg1}           ∥
-       ∥           {msg1}           ∥
-   ⊏＝＝           {msg1}           ∥
-    ＼             {msg1}           ∥
-      ＼           {msg1}           ∥
+       ∥           {msg[0]}          ∥
+       ∥           {msg[1]}          ∥
+       ∥           {msg[2]}          ∥
+       ∥           {msg[3]}          ∥
+       ∥           {msg[4]}          ∥
+       ∥           {msg[5]}          ∥
+       ∥           {msg[6]}          ∥
+   ⊏＝＝            {msg[7]}           ∥
+    ＼             {msg[8]}           ∥
+      ＼           {msg[9]}          ∥
         ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
 
 '''.format(msg))
@@ -152,15 +152,15 @@ def psay(msg):
 def osay(msg):
 	print('''
 ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
-∥         {msg1}              ∥                                  
-∥         {msg2}              ∥                                   
-∥         {msg3}              ∥                                   
-∥         {msg4}              ∥ 
-∥         {msg5}              ∥
-∥         {msg6}              ∥
-∥         {msg7}              ＝＝＝⊐
-∥         {msg8}                 ノ
-∥         {msg9}               ノ 
+∥         {msg[0]}            ∥                                  
+∥         {msg[1]}            ∥                                   
+∥         {msg[2]}            ∥                                   
+∥         {msg[4]}            ∥ 
+∥         {msg[5]}            ∥
+∥         {msg[6]}            ∥
+∥         {msg[7]}            ＝＝＝⊐
+∥         {msg[8]}               ノ
+∥         {msg[9]}             ノ 
 ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
 
 '''.format(msg))
