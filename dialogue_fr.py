@@ -54,13 +54,12 @@ default_ask="Que choisissez-vous de faire?"
 
 #ARC 1 : Village Tutoriel 
 
-desc1_1_room="Vous vous levez dans une pièce sombre, vous allumez une bougie. Vous êtes chez vous dans votre chambre, il y a des vieux libres dans la bibliothèque à votre gauche, et un escalier descendant à votre droite."
-askP1_2_room=[default_ask, "Descendre par les excaliers", "Regarder"]
-qOut1_3_room=[a, desc1_4_books]
-
-desc1_4_books="You see three heavy books"
-askP1_5_books=['Lire "Le Guide Sacré"', 'Lire "Histoire de Trolland"', 'Lire "La Science de la Magie"']
-qOut1_6_books=[desc1_7_holyGuide, desc1_8_history, desc1_9_magicScience]
-desc1_7_holyGuide=""
-desc1_8_history=""
 desc1_9_magicScience=""
+desc1_8_history=""
+desc1_7_holyGuide=""
+qOut1_6_books=[desc1_7_holyGuide, desc1_8_history, desc1_9_magicScience]
+askP1_5_books=['Lire "Le Guide Sacré"', 'Lire "Histoire de Trolland"', 'Lire "La Science de la Magie"']
+desc1_4_books="You see three heavy books"
+qOut1_3_room=[a, desc1_4_books]
+askP1_2_room=[default_ask, "Descendre par les excaliers", "Regarder"]
+desc1_1_room="Vous vous levez dans une pièce sombre, vous allumez une bougie. Vous êtes chez vous dans votre chambre, il y a des vieux libres dans la bibliothèque à votre gauche, et un escalier descendant à votre droite."
