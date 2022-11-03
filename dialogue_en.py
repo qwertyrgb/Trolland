@@ -1,12 +1,12 @@
 # Fichier de traduction, différent pour dialogue_fr.py et dialogue_es.py
 
 # Tiers des armes
-Common_Tier='Common'
-Rare_Tier='Rare'
-Hero_Tier='Heroic'
-Relic_Tier='Relic'
-Arcanic_Tier='Arcanic'
-Easter_Egg_Tier='Easter Egg'
+common_Tier='Common'
+rare_Tier='Rare'
+hero_Tier='Heroic'
+relic_Tier='Relic'
+arcanic_Tier='Arcanic'
+easter_Egg_Tier='Easter Egg'
 
 # Les armes
 wooden_Shield_Name='Wooden Shield'
