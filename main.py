@@ -134,6 +134,18 @@ print(Welcome)#le message de bonsoir dans la langue choisie (input de ligne 6)
 
 def psay(msg):
 	print('''
+       ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
+       ∥           {msg1}           ∥
+       ∥           {msg1}           ∥
+       ∥           {msg1}           ∥
+       ∥           {msg1}           ∥
+       ∥           {msg1}           ∥
+       ∥           {msg1}           ∥
+       ∥           {msg1}           ∥
+   ⊏＝＝           {msg1}           ∥
+    ＼             {msg1}           ∥
+      ＼           {msg1}           ∥
+        ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
 
 '''.format(msg))
 
