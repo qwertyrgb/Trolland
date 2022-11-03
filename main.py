@@ -11,35 +11,55 @@ elif lang in ['fr','français','francais']:
 else: 
   from dialogue_en import * #Anglais par défaut
 
+
+class Entities: # définit toutes les entités du jeu (joueur, enemis..)
+	def __init__(self,defe,atq,hp,mp,sta,lvl):
+		self.defe=defe
+		self.atq=atq
+		self.hp=hp
+		self.mp=mp
+		self.sta=sta
+		self.lvl=lvl
+
+Troll1=Entities(1,2,3,4,5,6)#commence à defe (pas def car non enft) donc defe=1,atq=2..
+Troll2=Entities(1,2,3,4,5,6)
+High_Elf1=Entities(1,2,3,4,5,6)
+Your_Mum=Entities(1,2,3,4,5,6)
+
 #Exemple de la variable Enemies, les enemis actuellement présents en combat
 Enemies=[Troll1,Troll2,High_Elf1,Your_Mum]
 
 # Définition des fonctions qui affectent les stats avec les armes
 # Comme par exemple 'defence has a 10% chance to be doubled'
 
-def faith_shield_fun(Player): #voir power-system.txt
+def faith_shield_fun(): #voir power-system.txt
   if randint(1,10)==1: # 10% de chance de doubler la défense
     Player.defe*=2
 
-def michael_sword_fun(Player):
+def michael_sword_fun():
   if randint(1,10)==1: #10% de chance de doubler l'attaque
     Player.atq*=2
 
-def trollking_shield_fun(Player):
+def trollking_shield_fun():
   if randint(1,4)==1: #25% de chance de ne pas recevoir de dégats <=> def=100
     Player.defe=100
 
-def conquerer_sword_fun(Player): # Conquerer's sword
+def conquerer_sword_fun(): # Conquerer's sword
   if len(Enemies)==1: #Si il n'y a qu'un seul ennemi
     Player.off_pow*=2
 
-def elfking_epitome_fun(Player):
-  if Enemies_Number>1: #plusieurs enemis
+def elfking_epitome_fun():
+  if len(Enemies)>1: #plusieurs enemis
     for i in Enemis:
       if randint(1,4)==1: # 25% de chance de stun
         i.stun()
 
-#def purgatory_door_fun(Player):
+def purgatory_door_fun():pass
+def divine_light_blade_fun():pass
+def satan_profecy_fun():pass
+def paul_cum_shield_fun():pass
+def mael_schlong_fun():pass
+def arty_pride_book_fun():pass
 
 
 class Weapons: # définit toutes les armes du jeu
@@ -56,16 +76,16 @@ class Weapons: # définit toutes les armes du jeu
 
 Magical_Tome=Weapons(Rare_Tier,Magical_Tome_Name,Magical_Tome_Description,{'MP':5, 'ATQ':10}) #voir power-system.txt + dialogue_en.py
 # Pour les nuls:
-# Dans la ligne 58, ce que je fais c'est initialiser une nouvelle arme
-# J'appelle donc la fontion __init__ (ligne 47)
-# J'ais mis self commme paramètre, dans ce cas self c'est Magical_Tome
+# Dans la ligne 77, une nouvelle arme est initialisée
+# On appelle donc la fontion __init__ (ligne 66)
+# self commme paramètre, dans ce cas self c'est Magical_Tome
 # tier, name, description, bonus
 # tier: Rare_Tier, variable importée par dialogue_en, dialogue_es ou dialogue_fr 'Rare', ou 'Raro' dépendant de la langue choisie
 # name: variable de langue, 'Magical tome', 'Tome magique' ou 'Tomo mágico'
 # description: variable de langue
 # bonus: {'MP':5, 'ATQ':10}
 # Si on demande print(Magical_Tome.bonus) ça met {'MP':5}    print(Magical_Tome.tier) affiche 'Rare' ou 'Raro' etc.
-# Puis ligne 54, la fonction info
+# Puis ligne 73, la fonction info
 # S'utilise sous la forme Magical_Tome.info()    (C'est une fonction)
 # Magical_tome.info() en anglais donne:
 '''
@@ -83,10 +103,10 @@ Blacksmith_Sword=Weapons(Rare_Tier,Blacksmith_Sword_Name,Blacksmith_Sword_Descri
 Faith_Shield=Weapons(Hero_Tier,Faith_Shield_Name,Faith_Shield_Description,{'DEF':25,'FUN':faith_shield_fun})
 Michael_Sword=Weapons(Hero_Tier,Michael_Sword_Name,Michael_Sword_Description,{'STA':20,'ATQ':40,'FUN':michael_sword_fun})
 Dantalion_Anti_Bible=Weapons(Hero_Tier,Dantalion_Anti_Bible_Name,Dantalion_Anti_Bible_Description,{'MP':20,'ATQ':10})
-Troll_King_Shield=Weapons(Relic_Tier,Troll_King_Shield_Name,Troll_King_Shield_Description,{'DEF':35,'FUN':troll_king_shield_fun})
+Troll_King_Shield=Weapons(Relic_Tier,Troll_King_Shield_Name,Troll_King_Shield_Description,{'DEF':35,'FUN':trollking_shield_fun})
 Conquerer_Sword=Weapons(Relic_Tier,Conquerer_Sword_Name,Conquerer_Sword_Description,{'STA':50,'ATQ':50,'FUN':conquerer_sword_fun})
-Elf_King_Epitome=Weapons(Relic_Tier,Elf_King_Epitome_Name,Elf_King_Epitome_Description,{'MP':50,'ATQ':50,'FUN':elf_king_epitome_fun})
-Purgatory_Door=Weapons(Arcanic_Tier,Purgatory_Door_Name,Puragtory_Door_Description,{'DEF':50,'FUN':purgatory_door_fun})
+Elf_King_Epitome=Weapons(Relic_Tier,Elf_King_Epitome_Name,Elf_King_Epitome_Description,{'MP':50,'ATQ':50,'FUN':elfking_epitome_fun})
+Purgatory_Door=Weapons(Arcanic_Tier,Purgatory_Door_Name,Purgatory_Door_Description,{'DEF':50,'FUN':purgatory_door_fun})
 Divine_Light_Blade=Weapons(Arcanic_Tier,Divine_Light_Blade_Name,Divine_Light_Blade_Description,{'STA':75,'ATQ':100,'FUN':divine_light_blade_fun})
 Satan_Profecy=Weapons(Arcanic_Tier,Satan_Profecy_Name,Satan_Profecy_Description,{'MP':75,'ATQ':100,'FUN':satan_profecy_fun})
 Hugo_Wives=Weapons(Easter_Egg_Tier,Hugo_Wives_Name,Hugo_Wives_Description,{'DEF':100})
