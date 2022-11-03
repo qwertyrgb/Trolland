@@ -131,3 +131,26 @@ except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=''
 
 print(Welcome)#le message de bonsoir dans la langue choisie (input de ligne 6)
+
+def psay(msg):
+	print('''
+-------------
+|           |
+|    {}     |
+|           |
+-----------/ \
+            \  \
+	      \|
+'''.format(msg))
+
+def psay(msg):
+	print('''
+  -------------
+  |           |
+  |    {}     |
+  |           |
+  |-----------|
+ /  /
+/  /
+| /
+'''.format(msg))
