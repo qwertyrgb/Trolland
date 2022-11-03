@@ -2,6 +2,7 @@
 ## 🄯 Copyleft 2022 - All wrongs reversed to Lamereary Industries - ширАко and SoulTaker
 
 from random import randint
+from easter_eggs import *
 
 lang=input('Language, Langue, Lengua? ').lower() #demande la langue, puis met l'input en minuscule
 if lang in ['es','español','espanol']:
