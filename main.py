@@ -19,7 +19,7 @@ Enemies=[Troll1,Troll2,High_Elf1,Your_Mum]
 
 def faith_shield_fun(Player): #voir power-system.txt
   if randint(1,10)==1: # 10% de chance de doubler la défense
-    Player.def*=2
+    Player.defe*=2
 
 def michael_sword_fun(Player):
   if randint(1,10)==1: #10% de chance de doubler l'attaque
@@ -27,7 +27,7 @@ def michael_sword_fun(Player):
 
 def trollking_shield_fun(Player):
   if randint(1,4)==1: #25% de chance de ne pas recevoir de dégats <=> def=100
-    Player.def=100
+    Player.defe=100
 
 def conquerer_sword_fun(Player): # Conquerer's sword
   if len(Enemies)==1: #Si il n'y a qu'un seul ennemi
