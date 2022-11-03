@@ -104,25 +104,25 @@ This weapon does emotional damage
 MP: +5  ATQ: +10
 '''
 
-Wooden_Shield=Weapons(Common_Tier,Wooden_Shield_Name,Wooden_Shield_Description) #pas de bonus dans power-system.txt
-Wooden_Sword=Weapons(Common_Tier,Wooden_Sword_Name,Wooden_Sword_Description)
-Old_Grimoire=Weapons(Common_Tier,Old_Grimoire_Name,Old_Grimoire_Description)
-Priest_Shield=Weapons(Rare_Tier,Priest_Shield_Name,Priest_Shield_Description,{'DEF':10})
-Blacksmith_Sword=Weapons(Rare_Tier,Blacksmith_Sword_Name,Blacksmith_Sword_Description,{'STA':5,'ATQ':10})
+wooden_Shield=Weapons(Common_Tier,Wooden_Shield_Name,Wooden_Shield_Description) #pas de bonus dans power-system.txt
+wooden_Sword=Weapons(Common_Tier,Wooden_Sword_Name,Wooden_Sword_Description)
+old_Grimoire=Weapons(Common_Tier,Old_Grimoire_Name,Old_Grimoire_Description)
+priest_Shield=Weapons(Rare_Tier,Priest_Shield_Name,Priest_Shield_Description,{'DEF':10})
+blacksmith_Sword=Weapons(Rare_Tier,Blacksmith_Sword_Name,Blacksmith_Sword_Description,{'STA':5,'ATQ':10})
 # 'FUN': fonction qui s'applique à chaque attaque, dans Faith_Shield la défense à une chance sur 10 de doubler (ligne 21)
-Faith_Shield=Weapons(Hero_Tier,Faith_Shield_Name,Faith_Shield_Description,{'DEF':25,'FUN':[faith_shield_fun,faith_shield_fun_desc]})
-Michael_Sword=Weapons(Hero_Tier,Michael_Sword_Name,Michael_Sword_Description,{'STA':20,'ATQ':40,'FUN':[michael_sword_fun,michael_sword_fun_desc]})
-Dantalion_Anti_Bible=Weapons(Hero_Tier,Dantalion_Anti_Bible_Name,Dantalion_Anti_Bible_Description,{'MP':20,'ATQ':10})
-Troll_King_Shield=Weapons(Relic_Tier,Troll_King_Shield_Name,Troll_King_Shield_Description,{'DEF':35,'FUN':trollking_shield_fun})
-Conquerer_Sword=Weapons(Relic_Tier,Conquerer_Sword_Name,Conquerer_Sword_Description,{'STA':50,'ATQ':50,'FUN':conquerer_sword_fun})
-Elf_King_Epitome=Weapons(Relic_Tier,Elf_King_Epitome_Name,Elf_King_Epitome_Description,{'MP':50,'ATQ':50,'FUN':elfking_epitome_fun})
-Purgatory_Door=Weapons(Arcanic_Tier,Purgatory_Door_Name,Purgatory_Door_Description,{'DEF':50,'FUN':purgatory_door_fun})
-Divine_Light_Blade=Weapons(Arcanic_Tier,Divine_Light_Blade_Name,Divine_Light_Blade_Description,{'STA':75,'ATQ':100,'FUN':divine_light_blade_fun})
-Satan_Profecy=Weapons(Arcanic_Tier,Satan_Profecy_Name,Satan_Profecy_Description,{'MP':75,'ATQ':100,'FUN':satan_profecy_fun})
-Hugo_Wives=Weapons(Easter_Egg_Tier,Hugo_Wives_Name,Hugo_Wives_Description,{'DEF':100})
-Paul_Cum_Shield=Weapons(Easter_Egg_Tier,Paul_Cum_Shield_Name,Paul_Cum_Shield_Description,{'DEF':25,'FUN':paul_cum_shield_fun})
-Mael_Schlong=Weapons(Easter_Egg_Tier,Mael_Schlong_Name,Mael_Schlong_Description,{'STA':95,'ATQ':700,'FUN':mael_schlong_fun})
-Arty_Pride_Book=Weapons(Easter_Egg_Tier,Arty_Pride_Book_Name,Arty_Pride_Book_Description,{'MP':95,'ATQ':700,'FUN':arty_pride_book_fun})
+faith_Shield=Weapons(hero_Tier,Faith_Shield_Name,Faith_Shield_Description,{'DEF':25,'FUN':[faith_shield_fun,faith_shield_fun_desc]})
+michael_Sword=Weapons(hero_Tier,Michael_Sword_Name,Michael_Sword_Description,{'STA':20,'ATQ':40,'FUN':[michael_sword_fun,michael_sword_fun_desc]})
+dantalion_Anti_Bible=Weapons(hero_Tier,Dantalion_Anti_Bible_Name,Dantalion_Anti_Bible_Description,{'MP':20,'ATQ':10})
+troll_King_Shield=Weapons(relic_Tier,Troll_King_Shield_Name,Troll_King_Shield_Description,{'DEF':35,'FUN':trollking_shield_fun})
+conquerer_Sword=Weapons(relic_Tier,Conquerer_Sword_Name,Conquerer_Sword_Description,{'STA':50,'ATQ':50,'FUN':conquerer_sword_fun})
+elf_King_Epitome=Weapons(relic_Tier,Elf_King_Epitome_Name,Elf_King_Epitome_Description,{'MP':50,'ATQ':50,'FUN':elfking_epitome_fun})
+purgatory_Door=Weapons(arcanic_Tier,Purgatory_Door_Name,Purgatory_Door_Description,{'DEF':50,'FUN':purgatory_door_fun})
+divine_Light_Blade=Weapons(arcanic_Tier,Divine_Light_Blade_Name,Divine_Light_Blade_Description,{'STA':75,'ATQ':100,'FUN':divine_light_blade_fun})
+satan_Profecy=Weapons(arcanic_Tier,Satan_Profecy_Name,Satan_Profecy_Description,{'MP':75,'ATQ':100,'FUN':satan_profecy_fun})
+hugo_Wives=Weapons(easter_Egg_Tier,Hugo_Wives_Name,Hugo_Wives_Description,{'DEF':100})
+paul_Cum_Shield=Weapons(easter_Egg_Tier,Paul_Cum_Shield_Name,Paul_Cum_Shield_Description,{'DEF':25,'FUN':paul_cum_shield_fun})
+mael_Schlong=Weapons(easter_Egg_Tier,Mael_Schlong_Name,Mael_Schlong_Description,{'STA':95,'ATQ':700,'FUN':mael_schlong_fun})
+arty_Pride_Book=Weapons(easter_Egg_Tier,Arty_Pride_Book_Name,Arty_Pride_Book_Description,{'MP':95,'ATQ':700,'FUN':arty_pride_book_fun})
 
 try: #import basique de sauvegarde
   from saves import *
