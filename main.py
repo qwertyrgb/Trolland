@@ -47,6 +47,7 @@ def trollking_shield_fun():
 def conquerer_sword_fun(): # Conquerer's sword
   if len(Enemies)==1: #Si il n'y a qu'un seul ennemi
     Player.off_pow*=2
+  return 'zizi'
 
 def elfking_epitome_fun():
   if len(Enemies)>1: #plusieurs enemis
@@ -62,6 +63,15 @@ def mael_schlong_fun():pass
 def arty_pride_book_fun():pass
 
 
+def write(x):
+  if type(x)==int:
+    return '+'+str(x)
+  if type(x)==list:# Si c'est une liste, c'est une fonction logique ahahahahahahahahahahahahahahahahahaha
+    return x[1]
+  else:print('''
+	WTF
+	c'est''',x,'\n\n')
+
 class Weapons: # définit toutes les armes du jeu
   def __init__(self,tier,name,description,bonus={}): # Pas forcément de bonus, d'ou le bonus={} (si aucune valeur n'est donnée, bonus sera {})
     '''Initialise ( __init__ ) les armes du jeu'''
@@ -72,7 +82,7 @@ class Weapons: # définit toutes les armes du jeu
 
   def info(self):# ex: Rare tier: Magical Tome {MP +5, ATQ +10} \n this weapon does emotional damage
     '''Donne les informations sur l'arme sous forme de GUI'''
-    print(self.name,', Tier: ',self.tier,', '.join(tuple(': +'.join((i,str(self.bonus[i]))) for i in self.bonus)), self.description)
+    print(self.name+', Tier:',self.tier+'\n'+', '.join(tuple(': '.join((i,write(self.bonus[i]))) for i in self.bonus))+'\n'+self.description)
 
 Magical_Tome=Weapons(Rare_Tier,Magical_Tome_Name,Magical_Tome_Description,{'MP':5, 'ATQ':10}) #voir power-system.txt + dialogue_en.py
 # Pour les nuls:
@@ -100,8 +110,8 @@ Old_Grimoire=Weapons(Common_Tier,Old_Grimoire_Name,Old_Grimoire_Description)
 Priest_Shield=Weapons(Rare_Tier,Priest_Shield_Name,Priest_Shield_Description,{'DEF':10})
 Blacksmith_Sword=Weapons(Rare_Tier,Blacksmith_Sword_Name,Blacksmith_Sword_Description,{'STA':5,'ATQ':10})
 # 'FUN': fonction qui s'applique à chaque attaque, dans Faith_Shield la défense à une chance sur 10 de doubler (ligne 21)
-Faith_Shield=Weapons(Hero_Tier,Faith_Shield_Name,Faith_Shield_Description,{'DEF':25,'FUN':faith_shield_fun})
-Michael_Sword=Weapons(Hero_Tier,Michael_Sword_Name,Michael_Sword_Description,{'STA':20,'ATQ':40,'FUN':michael_sword_fun})
+Faith_Shield=Weapons(Hero_Tier,Faith_Shield_Name,Faith_Shield_Description,{'DEF':25,'FUN':[faith_shield_fun,faith_shield_fun_desc]})
+Michael_Sword=Weapons(Hero_Tier,Michael_Sword_Name,Michael_Sword_Description,{'STA':20,'ATQ':40,'FUN':[michael_sword_fun,michael_sword_fun_desc]})
 Dantalion_Anti_Bible=Weapons(Hero_Tier,Dantalion_Anti_Bible_Name,Dantalion_Anti_Bible_Description,{'MP':20,'ATQ':10})
 Troll_King_Shield=Weapons(Relic_Tier,Troll_King_Shield_Name,Troll_King_Shield_Description,{'DEF':35,'FUN':trollking_shield_fun})
 Conquerer_Sword=Weapons(Relic_Tier,Conquerer_Sword_Name,Conquerer_Sword_Description,{'STA':50,'ATQ':50,'FUN':conquerer_sword_fun})
