@@ -43,22 +43,22 @@ EASTER EGG TIER:
 - Add: shirAko's Penetration Cum Blast (spawns minors on the battlefield)
 
 ARCANIC TIER:
-- Purgatory's Door (DEF +50, will return 20% of the damage to the attacker)
+- Purgatory's Door (DEFE +50, will return 20% of the damage to the attacker)
 - Divine Blade of Light (STA +75, ATQ +100, damage is doubled if attackor has more than 50% HP left)
 - Satan's Prophecy  (MP +75, ATQ +100, inflicts curse on attacked that drains 20% of their MAX_HP per turn)
 
 RELIC TIER:
-- Troll King's Shield (DEF +35, damage has a 25% chance to be ignored) 
+- Troll King's Shield (DEFE +35, damage has a 25% chance to be ignored) 
 - Conquerer's Sword (STA +50, ATQ +50, if there is a single enemy, damage is doubled)
 - Elf King's Epitome (MP +50, ATQ +50, if there are multiple enemies, all enemies in battle have a 25% chance to be stunned)
 
 HERO TIER:
-- Shield of Faith (DEF +25, defence has a 10% chance to be doubled)
+- Shield of Faith (DEFE +25, defence has a 10% chance to be doubled)
 - Michael's Sword (STA +20, ATQ +40, attack has a 10% chance to be doubled)
 - Dantalion's Anti-Bible (MP +20, ATQ +40)
 
 RARE TIER:
-- Priest's Shield (DEF +10)
+- Priest's Shield (DEFE +10)
 - Blacksmith's Sword (STA +5, ATQ +10)
 - Magical Tome (MP +5, ATQ +10)
 
