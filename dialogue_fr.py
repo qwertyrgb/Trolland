@@ -10,12 +10,13 @@ Easter_Egg_Tier='Easter Egg'
 
 # Les armes
 Wooden_Shield_Name='Bouclier en bois'
-Wooden_Shield_Description=''
+Wooden_Shield_Description="Un bouclier en bois qui n'a pas l'air très résistant."
 Wooden_Sword_Name='Épée en bois'
-Wooden_Sword_Description=''
+Wooden_Sword_Description='Une épée en bois dont la forme est imparfaite et qui semble difficile à utiliser.'
 Old_Grimoire_Name='Vieux grimoire'
+Old_Grimoire_Description='Un grimoire avec des caractères illisibles et des illustrations étranges. Vous sentez une légère aura magique en émaner.'
 Priest_Shield_Name='Bouclier du Prêtre'
-Priest_Shield_Description=''
+Priest_Shield_Description="Un bouclier avec une crois dessus et l'emblème de l'église, il semble solide"
 Blacksmith_Sword_Name='Épée du forgeron'
 Blacksmith_Sword_Description=''
 Magical_Tome_Name='Tome Magique'
