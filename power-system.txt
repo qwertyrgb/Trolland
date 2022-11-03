@@ -1,6 +1,6 @@
 STAT RANGE :
 
-DEF : 0-99 (100)
+DEFE : 0-99 (100)
 ATQ : 1-1000
 HP : 1-2000
 MP : 5-100
@@ -10,7 +10,7 @@ LVL : 0-100
 POWER EQUATION :
 
 off_pow : SCA * ATQ + (MP or STA) * ATQ
-dmg : HP - (off_pow - DEF/100 * off_pow)
+dmg : HP - (off_pow - DEFE/100 * off_pow)
 
 SPELLS :
 
@@ -33,8 +33,8 @@ ATTACKS :
 WEAPONS (can hold 1 at a time) : 
 
 EASTER EGG TIER:
-- Hugo's Wives (DEF +100)
-- Paul's Cum Shield (DEF +25, All damage received is returned to attacker and doubled)
+- Hugo's Wives (DEFE +100)
+- Paul's Cum Shield (DEFE +25, All damage received is returned to attacker and doubled)
 - Maël's Schlong (STA +95, ATQ +700, attacks all enemies on the battlefield at once)
 - Arty's Pride-book (MP +95, ATQ +700, stuns all enemies after every attack)
 
