@@ -12,6 +12,38 @@ elif lang in ['fr','français','francais']:
 else: 
   from dialogue_en import * #Anglais par défaut
 
+def change(q):#voir fonction say
+	while len(q)<10:
+		q.append('')
+		if len(q)<10:
+			q.insert(0,'')
+	for i in range(10):
+		while len(q[i])<34+(i==8)*2+(i in [7,8,9]):
+			q[i]+=' '
+			if len(q[i])<34+(i==8)*2+(i in [7,8,9]):
+				q[i]=' '+q[i]
+	return q
+
+def psay(msg):
+	print("       ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n       ∥{0[0]}∥\n       ∥{0[1]}∥\n       ∥{0[2]}∥\n       ∥{0[3]}∥\n       ∥{0[4]}∥\n       ∥{0[5]}∥\n       ∥{0[6]}∥\n   ⊏＝＝{0[7]}∥\n    ＼{0[8]}∥\n      ＼{0[9]}∥\n        ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐".format(msg))
+
+def osay(msg):
+	print("⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n∥{0[0]}∥                                  \n∥{0[1]}∥                                   \n∥{0[2]}∥                                   \n∥{0[3]}∥                                   \n∥{0[4]}∥ \n∥{0[5]}∥\n∥{0[6]}∥\n∥{0[7]}＝＝＝⊐\n∥{0[8]}ノ\n∥{0[9]}ノ \n⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐".format(msg))
+
+def say(msg,what):#dire des messages avec une décoration
+	q=[]
+	i=30
+	prev=0
+	while i<len(msg):
+		while msg[i]!=' ':i-=1
+		q.append(msg[prev:i])
+		prev=i+1
+		i+=30
+	q.append(msg[prev:i])
+	j=0
+	while j<len(q):
+		what(change(q[j:j+10]))
+		j+=10
 
 class Entities: # définit toutes les entités du jeu (joueur, enemis..)
 	def __init__(self,defe,atq,hp,mp,sta,lvl):
@@ -64,7 +96,7 @@ def mael_schlong_fun():pass
 def arty_pride_book_fun():pass
 
 
-def write(x):
+def writebonus(x):
   if type(x)==int:
     return '+'+str(x)
   if type(x)==list:# Si c'est une liste, c'est une fonction logique ahahahahahahahahahahahahahahahahahaha
@@ -83,27 +115,10 @@ class Weapons: # définit toutes les armes du jeu
 
   def info(self):# ex: Rare tier: Magical Tome {MP +5, ATQ +10} \n this weapon does emotional damage
     '''Donne les informations sur l'arme sous forme de GUI'''
-    print(self.name+', Tier:',self.tier+'\n'+', '.join(tuple(': '.join((i,write(self.bonus[i]))) for i in self.bonus))+'\n'+self.description)
+    print(self.name+', Tier:',self.tier+'\n'+', '.join(tuple(': '.join((i,writebonus(self.bonus[i]))) for i in self.bonus))+'\n'+self.description)
 
 Magical_Tome=Weapons(Rare_Tier,Magical_Tome_Name,Magical_Tome_Description,{'MP':5, 'ATQ':10}) #voir power-system.txt + dialogue_en.py
-# Pour les nuls:
-# Dans la ligne 77, une nouvelle arme est initialisée
-# On appelle donc la fontion __init__ (ligne 66)
-# self commme paramètre, dans ce cas self c'est Magical_Tome
-# tier, name, description, bonus
-# tier: Rare_Tier, variable importée par dialogue_en, dialogue_es ou dialogue_fr 'Rare', ou 'Raro' dépendant de la langue choisie
-# name: variable de langue, 'Magical tome', 'Tome magique' ou 'Tomo mágico'
-# description: variable de langue
-# bonus: {'MP':5, 'ATQ':10}
-# Si on demande print(Magical_Tome.bonus) ça met {'MP':5}    print(Magical_Tome.tier) affiche 'Rare' ou 'Raro' etc.
-# Puis ligne 73, la fonction info
-# S'utilise sous la forme Magical_Tome.info()    (C'est une fonction)
-# Magical_tome.info() en anglais donne:
-'''
-Magical Tome, tier: Rare
-This weapon does emotional damage
-MP: +5  ATQ: +10
-'''
+
 
 Wooden_Shield=Weapons(Common_Tier,Wooden_Shield_Name,Wooden_Shield_Description) #pas de bonus dans power-system.txt
 Wooden_Sword=Weapons(Common_Tier,Wooden_Sword_Name,Wooden_Sword_Description)
@@ -132,37 +147,3 @@ except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=''
 
 print(Welcome)#le message de bonsoir dans la langue choisie (input de ligne 6)
-
-def psay(msg):
-	print('''
-       ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
-       ∥{0[0]}∥
-       ∥{0[1]}∥
-       ∥{0[2]}∥
-       ∥{0[3]}∥
-       ∥{0[4]}∥
-       ∥{0[5]}∥
-       ∥{0[6]}∥
-   ⊏＝＝{0[7]}∥
-    ＼{0[8]}∥
-      ＼{0[9]}∥
-        ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
-
-'''.format(msg))
-
-def osay(msg):
-	print('''
-⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
-∥{0[0]}∥                                  
-∥{0[1]}∥                                   
-∥{0[2]}∥                                   
-∥{0[3]}∥                                   
-∥{0[4]}∥ 
-∥{0[5]}∥
-∥{0[6]}∥
-∥{0[7]}＝＝＝⊐
-∥{0[8]}ノ
-∥{0[9]}ノ 
-⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐
-
-'''.format(msg))
