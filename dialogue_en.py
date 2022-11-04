@@ -70,24 +70,32 @@ Default_ask="What do you chose to do?"
 
 #ARC 1 : Tutorial Village 
 Desc1_1_room="You wake up in a dark room, you light a candle. You are home in your room, there are old books in the library on your left, and a staircase going down on your right."
-AskP1_2_room=[Default_ask, "Go downstairs", "Look at the books"]
+AskP1_room=[Default_ask, "Go downstairs", "Look at the books"]
 
 Desc1_4_books="You see three heavy books"
-AskP1_5_books=['Read "The Holy Guide"', 'Read "History of Trolland"', 'Read "The Science of Magic"']
-Desc1_7_holyGuide=""
-Desc1_8_history=""
-Desc1_9_magicScience=""
-QOut1_6_books=[Desc1_7_holyGuide, Desc1_8_history, Desc1_9_magicScience]
+AskP1_books=['Read "The Holy Guide"', 'Read "History of Trolland"', 'Read "The Science of Magic"', "Exit"]
+Desc1_5_holyGuide=""
+Desc1_6_history=""
+Desc1_7_magicScience=""
 
-Desc1_10_downstairs="You go down the old, creaky wooden stairs as a warm, welcoming living room reveals itself to your eyes. It's small, yet full of benevolance. You notice your mother isn't there. You see a note on the table, next to a fresh pot of blood colord lilies"
-Desc1_11_note="The note reads : \"Finally up :D ?I'm going to buy mana charges downtown, be back home soon. Love, Mom <3\""
-AskP1_12_downstairs=[DefaultAsk, "Go outside", "Go back upstairs", "Look around"]
-Desc1_14_lookAround="To your right is stone fireplace, with, above it a brick chimnee, and no fire within it, in front of it is a leather sofa, facing towards it with a low table. The house is decorated with sketches of trees hung up on the wall, one catches your attention, it shows a deer walking through the dense forest, you seem to percieve a faint silhouette drawn behind it, though it may just be your imagination. On your left is the kitchen, with next to it the door to your mother's bedroom."
-Desc1_15_backUpstairs="You go back up the stairs, and arrive in your bedroom"
+QOut1_books=[Desc1_5_holyGuide, Desc1_6_history, Desc1_7_magicScience, AskP1_room]
 
-Desc1_16_outside="You go though the large, dark, oak door and arrive on a gravel field, surrounded with tall green grass. You take a deep breath as you feel the grass-odored air freshen your lungs. Around yours are a number of similar looking houses, with small houses and bright flowers in their lawn. You see a child playing in the house in front of yours, how innocent he looks..."
-Desc1_17_boom="A sudden flash of light blinds your eyes, followed by a deafening detonation and shock wave, making you lose balance and fall back. You hear screams through the ringing of your ears"
+Desc1_2_downstairs="You go down the old, creaky wooden stairs as a warm, welcoming living room reveals itself to your eyes. It's small, yet full of benevolance. You notice your mother isn't there. You see a note on the table, next to a fresh pot of blood colord lilies"
+Desc1_3_note="The note reads : \"Finally up :D ?I'm going to buy mana charges downtown, be back home soon. Love, Mom <3\""
+AskP1_downstairs=[DefaultAsk, "Go outside", "Go back upstairs", "Look around"]
+Desc1_10_backUpstairs="You go back up the stairs, and arrive in your bedroom"
+Desc1_11_lookAround="To your right is stone fireplace, with, above it a brick chimnee, and no fire within it, in front of it is a leather sofa, facing towards it with a low table. The house is decorated with sketches of trees hung up on the wall, one catches your attention, it shows a deer walking through the dense forest, you seem to percieve a faint silhouette drawn behind it, though it may just be your imagination. On your left is the kitchen, with next to it the door to your mother's bedroom."
+Desc1_12_backInside="You go back inside, but the house is shaking, it seems very unsafe, you exit the house for now. You come back outside and the screams continue."
+AskP1_backOutside=[DefaultAsk, "Run towards the screams", "Run in the direction opposite to the screams"]
 
-QOUT1_13_downstairs=[Desc1_16_outside, Desc1_15_backUpstairs, Desc1_14_lookAround]
+QOut1_room=[Desc1_2_downstairs, Desc1_4_books]
 
-QOut1_3_room=[Desc1_10_downstairs, Desc1_4_books]
+Desc1_8_outside="You go though the large, dark, oak door and arrive on a gravel field, surrounded with tall green grass. You take a deep breath as you feel the grass-odored air freshen your lungs. Around yours are a number of similar looking houses, with small houses and bright flowers in their lawn. You see a child playing in the house in front of yours, how innocent he looks..."
+Desc1_9_boom="A sudden flash of light blinds your eyes, followed by a deafening detonation and shock wave, making you lose balance and fall back. You hear screams through the ringing of your ears coming from South-East : that's where the mana store is !"
+AskP1_boom=[DefaultAsk, "Go back inside the house", "Run towards the mana store", "Run in the direction opposite to the sound"]
+
+QOUT1_downstairs=[Desc1_8_outside, Desc1_10_backUpstairs, Desc1_11_lookAround]
+
+QOut1_boom=[Desc1_12_backInside, b, c]
+QOut1_backOutside=[a, b]
+
