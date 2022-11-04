@@ -48,33 +48,6 @@ Satan_Profecy_Name="Satan's Profecy"
 Satan_Profecy_Description="An extremely powerful divine relic. It contains half of Satan's knowledge within it, and contains an eternity of dark knowledge and magic."
 Satan_Profecy_fun='Inflicts curse on attacked that drains 20% of their MAX_HP per turn'
 
-#A CRYPTER > STR : Censored Easter Egg cheat code : Do not decrypt
-Hugo_Wives_Name="Hugo's Wifes"
-Hugo_Wives_Description="TAH LA POLYGAMIE"
-Hugo_Wives_Access="hgwife-/69/-gg"
-Paul_Cum_Shield_Name="Paul's Cum Shield"
-Paul_Cum_Shield_Access="pcm-shield//888"
-Paul_Cum_Shield_Description="1st of December results"
-Paul_Cum_Shield_fun='All damage received is returned to attacker and doubled'
-Mael_Schlong_Name="Maël's Schlong"
-Mael_Schlong_Access="elise-property/-33-/"
-Mael_Schlong_Description="Elise's favorite thing on Earth"
-Mael_Schlong_fun='Attacks all enemies on the battlefield at once'
-Arty_Pride_Book_Name="Arty's Pride Book"
-Arty_Pride_Book_Access="420-gay-420"
-Arty_Pride_Book_Description="no homo"
-Arty_Pride_Book_fun="Stuns all enemies after every attack"
-Santiago_Passport_Name="Santiaramba's Passport"
-Santiago_Passport_Acess="i/am:not(mexican)-44"
-Santiago_Passport_Description="Legendary object for any mexican"
-Shirako_Torhub_Name="ShirAko's TorHub"
-Shirako_Torhub_Acess="torhub.onion//is69superior"
-Shirako_Torhub_Description="A curse that will make life much harder"
-Shirako_Torhub_fun="All damage received is returned to attacker and doubled"
-Lunis_Iphone_Name="Lunis' iPhone"
-Lunis_Iphone_Access="6pay-more/less-quality9"
-Lunis_Iphone_Description="Don't buy iPhones kids"
-
 Welcome="Welcome to Trolland, this is a solely console high fantasy game with a cool storyline and a bunch of fights."
 
 
@@ -118,10 +91,3 @@ Desc1_17_boom="A sudden flash of light blinds your eyes, followed by a deafening
 QOUT1_13_downstairs=[Desc1_16_outside, Desc1_15_backUpstairs, Desc1_14_lookAround]
 
 QOut1_3_room=[Desc1_10_downstairs, Desc1_4_books]
-
-
-
-
-
-
-
