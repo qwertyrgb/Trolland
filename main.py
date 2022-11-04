@@ -146,4 +146,15 @@ try: #import basique de sauvegarde
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=''
 
-print(Welcome)#le message de bonsoir dans la langue choisie (input de ligne 6)
+input(Welcome)#le message de bonsoir dans la langue choisie (input de ligne 6)
+print(desc1_1_room)
+repP1_2_room=ask(askP1_2_room)
+if repP1_2_room=='1' or repP1_2_room in askP1_2_room[1].lower():print('Go')
+elif repP1_2_room=='2' or repP1_2_room in askP1_2_room[2].lower():
+	print(desc1_4_books)
+	repP1_5_books='zizidenoire'
+	while repP1_5_books!='3' and repP1_5_books not in askP1_5_books[3].lower():
+		repP1_5_books=ask(askP1_5_books)
+		if repP1_5_books=='0' or repP1_5_books in askP1_5_books[0].lower():print('Ceci est un guide')
+		if repP1_5_books=='1' or repP1_5_books in askP1_5_books[1].lower():print("C'est ma bite, l'hisoire de Trolland")
+		if repP1_5_books=='2' or repP1_5_books in askP1_5_books[2].lower():print('[Insérer ici science]')
