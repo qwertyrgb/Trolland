@@ -58,6 +58,7 @@ Welcome="Welcome to Trolland, this is a solely console high fantasy game with a 
 #"PSay" - Player Say - (a) - main character speaking 
 #"Cmbt" - Combat - (a,[b]) - fight description, opponent list
 #"AskP" - Ask Player - (a, b, c, d, e) - prompt description, options (1:4) : can be undefined
+
 #"QOut" - Question Output - (a, b, c, d) - outputs (1:4) of question w same desc and index
 
 #VAR NAME : (act-type + chapter + global index + action description) - ex : PSay1_12_artur-nul="artur est VRAIMENT nul"
