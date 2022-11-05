@@ -148,13 +148,25 @@ except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
 
 input(Welcome)#le message de bonsoir dans la langue choisie (input de ligne 6)
 print(desc1_1_room)
-repP1_2_room=ask(askP1_2_room)
-if repP1_2_room=='1' or repP1_2_room in askP1_2_room[1].lower():print('Go')
-elif repP1_2_room=='2' or repP1_2_room in askP1_2_room[2].lower():
+def room():
+	repP1_2_room=ask(AskP1_2_room)
+	if RepP1_2_room=='1' or RepP1_2_room in AskP1_2_room[1].lower():go_down()
+	elif RepP1_2_room=='2' or RepP1_2_room in AskP1_2_room[2].lower():look_books()
+
+def look_books():
 	print(desc1_4_books)
-	repP1_5_books='zizidenoire'
-	while repP1_5_books!='3' and repP1_5_books not in askP1_5_books[3].lower():
-		repP1_5_books=ask(askP1_5_books)
-		if repP1_5_books=='0' or repP1_5_books in askP1_5_books[0].lower():print('Ceci est un guide')
-		if repP1_5_books=='1' or repP1_5_books in askP1_5_books[1].lower():print("C'est ma bite, l'hisoire de Trolland")
-		if repP1_5_books=='2' or repP1_5_books in askP1_5_books[2].lower():print('[Insérer ici science]')
+	RepP1_5_books=''
+	while RepP1_5_books!='3' and RepP1_5_books not in AskP1_5_books[3].lower():
+		RepP1_5_books=ask(AskP1_5_books)
+		if RepP1_5_books=='0' or RepP1_5_books in AskP1_5_books[0].lower():print(Desc1_5_holyGuide)
+		if RepP1_5_books=='1' or RepP1_5_books in AskP1_5_books[1].lower():print(Desc1_6_history)
+		if RepP1_5_books=='2' or RepP1_5_books in AskP1_5_books[2].lower():print(Desc1_7_magicScience)
+	room()
+
+def go_down():
+	print(Desc1_2_downstairs)
+	print(Desc1_3_note)
+	RepP1_downstairs=ask(AskP1_downstairs)
+	if RepP1_downstairs=='1' or RepP1_downstairs in AskP1_downstairs[0].lower():print(Desc1_5_holyGuide)
+	if RepP1_downstairs=='2' or RepP1_downstairs in AskP1_downstairs[1].lower():room()
+	if RepP1_downstairs=='3' or RepP1_downstairs in AskP1_downstairs[2].lower():print(Desc1_7_magicScience)
