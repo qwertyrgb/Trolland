@@ -146,27 +146,18 @@ try: #import basique de sauvegarde
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=''
 
-input(Welcome)#le message de bonsoir dans la langue choisie (input de ligne 6)
-print(desc1_1_room)
-def room():
-	repP1_2_room=ask(AskP1_2_room)
-	if RepP1_2_room=='1' or RepP1_2_room in AskP1_2_room[1].lower():go_down()
-	elif RepP1_2_room=='2' or RepP1_2_room in AskP1_2_room[2].lower():look_books()
-
-def look_books():
-	print(desc1_4_books)
-	RepP1_5_books=''
-	while RepP1_5_books!='3' and RepP1_5_books not in AskP1_5_books[3].lower():
-		RepP1_5_books=ask(AskP1_5_books)
-		if RepP1_5_books=='0' or RepP1_5_books in AskP1_5_books[0].lower():print(Desc1_5_holyGuide)
-		if RepP1_5_books=='1' or RepP1_5_books in AskP1_5_books[1].lower():print(Desc1_6_history)
-		if RepP1_5_books=='2' or RepP1_5_books in AskP1_5_books[2].lower():print(Desc1_7_magicScience)
-	room()
-
-def go_down():
-	print(Desc1_2_downstairs)
-	print(Desc1_3_note)
-	RepP1_downstairs=ask(AskP1_downstairs)
-	if RepP1_downstairs=='1' or RepP1_downstairs in AskP1_downstairs[0].lower():print(Desc1_5_holyGuide)
-	if RepP1_downstairs=='2' or RepP1_downstairs in AskP1_downstairs[1].lower():room()
-	if RepP1_downstairs=='3' or RepP1_downstairs in AskP1_downstairs[2].lower():print(Desc1_7_magicScience)
+currentAction=0
+print(Welcome)
+def anal(q):
+    global currentAction
+    if q[:4]=='Desc':
+        print(eval(q))
+        currentAction=int(q.split('_')[1])
+    elif q[:4]=='AskP':
+        print('\t'.join(eval(q)))
+        anal(eval('QOut'+q[4:])[int(input())-1])
+while True:
+	anal(Next[currentAction])
+	
+	
+	
