@@ -2,7 +2,6 @@
 ## 🄯 Copyleft 2022 - All wrongs reversed to Lamereary Industries - ширАко and SoulTaker
 
 from random import randint
-from easter_eggs import *
 
 lang=input('Language, Langue, Lengua? ').lower() #demande la langue, puis met l'input en minuscule
 if lang in ['es','español','espanol']:
@@ -133,15 +132,20 @@ Purgatory_Door=Weapons(Arcanic_Tier,Purgatory_Door_Name,Purgatory_Door_Descripti
 Divine_Light_Blade=Weapons(Arcanic_Tier,Divine_Light_Blade_Name,Divine_Light_Blade_Description,{'STA':75,'ATQ':100,'FUN':[divine_light_blade_fun,Divine_Light_Blade_fun_desc]})
 Satan_Profecy=Weapons(Arcanic_Tier,Satan_Profecy_Name,Satan_Profecy_Description,{'MP':75,'ATQ':100,'FUN':[satan_profecy_fun,Satan_Profecy_fun_desc]})
 
+from easter_eggs import *
+
 try: #import basique de sauvegarde
   from saves import *
   Weapon=eval(Weapon)
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=''
+  currentAction=0
 
 from continuity import *
+print(Weapon)
+Weapon=Satan_Profecy
+print(Weapon)
 
-currentAction=0
 print(Welcome)
 def anal(q):
     global currentAction
@@ -149,8 +153,19 @@ def anal(q):
         print(eval(q))
         currentAction=int(q.split('_')[1])
     elif q[:4]=='AskP':
-        print('\t'.join(eval(q)))
-        anal(eval('QOut'+q[4:])[int(eval(easter(input())))-1])
+        print('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(len(eval(q)))]))
+        rep=input().lower()
+        easter(rep)
+        if rep=='exit':
+          save=open('saves.py','w')
+          print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
+          print('currentAction='+str(currentAction),file=save)
+          return
+        try:
+          anal(eval('QOut'+q[4:])[int(rep)-1])
+        except:
+          print('Answer not accepted')
+    return 1
 
-while True:
-	anal(Next[currentAction])
+while anal(Next[currentAction]):
+  1
