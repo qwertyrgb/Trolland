@@ -1,3 +1,4 @@
 # Fichier utilisé pour les sauvegardes
 # Exemple de sauvegarde
-Weapon='Hugo_Wives'
+Weapon="Satan_Profecy"
+currentAction=4
