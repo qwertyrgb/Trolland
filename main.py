@@ -142,9 +142,6 @@ except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   currentAction=0
 
 from continuity import *
-print(Weapon)
-Weapon=Satan_Profecy
-print(Weapon)
 
 print(Welcome)
 def anal(q):
