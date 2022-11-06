@@ -40,13 +40,13 @@ Elf_King_Epitome_Description="A manuscript containing all the magical knowledge 
 Elfking_Epitome_fun_desc='If there are multiple enemies, all enemies in battle have a 25% chance to be stunned'
 Purgatory_Door_Name="Purgatory's Door"
 Purgatory_Door_Description="An extremely powerful divine relic. This shield is said to have been crafted by higher forces when creating Purgatory to keep the vacant souls within, it is said to have been broken down by Satan during the Clash of the Above."
-Purgatory_Door_fun_name='Will return 20% of the damage to the attacker'
+Purgatory_Door_fun_desc='Will return 20% of the damage to the attacker'
 Divine_Light_Blade_Name='Divine Blade of Light'
 Divine_Light_Blade_Description="An extremely powerful divine relic. The legends say this sword was created from God's left ring finger, it can cut through any non-divine material."
-Divine_Light_Blade_fun='Damage is doubled if attacker has more than 50% HP left'
+Divine_Light_Blade_fun_desc='Damage is doubled if attacker has more than 50% HP left'
 Satan_Profecy_Name="Satan's Profecy"
 Satan_Profecy_Description="An extremely powerful divine relic. It contains half of Satan's knowledge within it, and contains an eternity of dark knowledge and magic."
-Satan_Profecy_fun='Inflicts curse on attacked that drains 20% of their MAX_HP per turn'
+Satan_Profecy_fun_desc='Inflicts curse on attacked that drains 20% of their MAX_HP per turn'
 
 Welcome="Welcome to Trolland, this is a solely console high fantasy game with a cool storyline and a bunch of fights."
 
