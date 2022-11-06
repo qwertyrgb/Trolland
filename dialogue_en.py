@@ -93,7 +93,7 @@ QOut1_room=["Desc1_2_downstairs", "Desc1_4_books"]
 
 Desc1_8_outside="You go through the large, dark, oak door and arrive on a gravel field, surrounded with tall green grass. You take a deep breath as you feel the grass-odored air freshen your lungs. Around yours are a number of similar looking houses, with small houses and bright flowers in their lawn. You see a child playing in the house in front of yours, how innocent he looks..."
 Desc1_9_boom="A sudden flash of light blinds your eyes, followed by a deafening detonation and shock wave, making you lose balance and fall back. You hear screams through the ringing of your ears coming from South-East : that's where the mana store is !"
-AskP1_boom=[DefaultAsk, "Go back inside the house", "Run towards the mana store", "Run in the direction opposite to the sound"]
+AskP1_boom=[Default_ask, "Go back inside the house", "Run towards the mana store", "Run in the direction opposite to the sound"]
 
 QOut1_downstairs=["Desc1_8_outside", "Desc1_10_backUpstairs", "Desc1_11_lookAround"]
 
