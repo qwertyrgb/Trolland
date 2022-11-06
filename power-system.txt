@@ -33,7 +33,7 @@ ATTACKS :
 WEAPONS (can hold 1 at a time) : 
 
 EASTER EGG TIER: 
-- Hugo's Wives (DEF +100) - gwife-/69/-gg
+- Hugo's Wives (DEF +100) - hgwife-/69/-gg
 - Paul's Cum Shield (DEF +25, All damage received is returned to attacker and doubled) - pcm-shield//888
 - Maël's Schlong (STA +95, ATQ +700, attacks all enemies on the battlefield at once) - elise-property/-33-/
 - Arty's Pride-book (MP +95, ATQ +700, stuns all enemies after every attack) - 420-gay-420
