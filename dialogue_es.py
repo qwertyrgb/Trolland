@@ -39,13 +39,6 @@ Divine_Light_Blade_Name='Cuchilla Divina de Luz'
 Divine_Light_Blade_Description=''
 Satan_Profecy_Name='Profecía de Satanás'
 Satan_Profecy_Description=''
-Hugo_Wives_Name='Esposas de Hugo'
-Hugo_Wives_Description=''
-Paul_Cum_Shield_Name='Escudo de Cum de Pol'
-Paul_Cum_Shield_Description=''
-Mael_Schlong_Name='Schlong de Mael'
-Mael_Schlong_Description=''
-Arty_Pride_Book_Name='Artur, déjate de Mariposeos'
-Arty_Pride_Book_Description=''
+
 
 Welcome="Bienvenido a Trolland, este es un juego de alta fantasía exclusivo para consola con una historia genial y muchas, muchas peleas."
