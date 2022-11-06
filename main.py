@@ -150,7 +150,7 @@ def anal(q):
         print(eval(q))
         currentAction=int(q.split('_')[1])
     elif q[:4]=='AskP':
-        print('\t'.join(['. '.join([str(i+1),eval(q)[i]]) for i in range(len(eval(q)))]))
+        print('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(len(eval(q)))]))
         rep=input().lower()
         easter(rep)
         if rep=='exit':
