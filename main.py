@@ -67,20 +67,20 @@ Enemies=[Troll1,Troll2,High_Elf1,Your_Mum]
 
 def faith_shield_fun(): #voir power-system.txt
   if randint(1,10)==1: # 10% de chance de doubler la défense
-    Player.defe*=2
+    Player.DEF*=2
 
 def michael_sword_fun():
   if randint(1,10)==1: #10% de chance de doubler l'attaque
-    Player.atq*=2
+    Player.ATQ*=2
 
 def trollking_shield_fun():
   if randint(1,4)==1: #25% de chance de ne pas recevoir de dégats <=> def=100
-    Player.defe=100
+    Player.DEF=100
 
 def conquerer_sword_fun(): # Conquerer's sword
   if len(Enemies)==1: #Si il n'y a qu'un seul ennemi
     Player.off_pow*=2
-  return 'zizi'
+
 
 def elfking_epitome_fun():
   if len(Enemies)>1: #plusieurs enemis
@@ -101,9 +101,6 @@ def writebonus(x):
     return '+'+str(x)
   if type(x)==list:# Si c'est une liste, c'est une fonction logique ahahahahahahahahahahahahahahahahahaha
     return x[1]
-  else:print('''
-	WTF
-	c'est''',x,'\n\n')
 
 class Weapons: # définit toutes les armes du jeu
   def __init__(self,tier,name,description,bonus={}): # Pas forcément de bonus, d'ou le bonus={} (si aucune valeur n'est donnée, bonus sera {})
@@ -126,25 +123,23 @@ Old_Grimoire=Weapons(Common_Tier,Old_Grimoire_Name,Old_Grimoire_Description)
 Priest_Shield=Weapons(Rare_Tier,Priest_Shield_Name,Priest_Shield_Description,{'DEF':10})
 Blacksmith_Sword=Weapons(Rare_Tier,Blacksmith_Sword_Name,Blacksmith_Sword_Description,{'STA':5,'ATQ':10})
 # 'FUN': fonction qui s'applique à chaque attaque, dans Faith_Shield la défense à une chance sur 10 de doubler (ligne 21)
-Faith_Shield=Weapons(Hero_Tier,Faith_Shield_Name,Faith_Shield_Description,{'DEF':25,'FUN':[faith_shield_fun,faith_shield_fun_desc]})
-Michael_Sword=Weapons(Hero_Tier,Michael_Sword_Name,Michael_Sword_Description,{'STA':20,'ATQ':40,'FUN':[michael_sword_fun,michael_sword_fun_desc]})
+Faith_Shield=Weapons(Hero_Tier,Faith_Shield_Name,Faith_Shield_Description,{'DEF':25,'FUN':[faith_shield_fun,Faith_shield_fun_desc]})
+Michael_Sword=Weapons(Hero_Tier,Michael_Sword_Name,Michael_Sword_Description,{'STA':20,'ATQ':40,'FUN':[michael_sword_fun,Michael_sword_fun_desc]})
 Dantalion_Anti_Bible=Weapons(Hero_Tier,Dantalion_Anti_Bible_Name,Dantalion_Anti_Bible_Description,{'MP':20,'ATQ':10})
-Troll_King_Shield=Weapons(Relic_Tier,Troll_King_Shield_Name,Troll_King_Shield_Description,{'DEF':35,'FUN':trollking_shield_fun})
-Conquerer_Sword=Weapons(Relic_Tier,Conquerer_Sword_Name,Conquerer_Sword_Description,{'STA':50,'ATQ':50,'FUN':conquerer_sword_fun})
-Elf_King_Epitome=Weapons(Relic_Tier,Elf_King_Epitome_Name,Elf_King_Epitome_Description,{'MP':50,'ATQ':50,'FUN':elfking_epitome_fun})
-Purgatory_Door=Weapons(Arcanic_Tier,Purgatory_Door_Name,Purgatory_Door_Description,{'DEF':50,'FUN':purgatory_door_fun})
-Divine_Light_Blade=Weapons(Arcanic_Tier,Divine_Light_Blade_Name,Divine_Light_Blade_Description,{'STA':75,'ATQ':100,'FUN':divine_light_blade_fun})
-Satan_Profecy=Weapons(Arcanic_Tier,Satan_Profecy_Name,Satan_Profecy_Description,{'MP':75,'ATQ':100,'FUN':satan_profecy_fun})
-Hugo_Wives=Weapons(Easter_Egg_Tier,Hugo_Wives_Name,Hugo_Wives_Description,{'DEF':100})
-Paul_Cum_Shield=Weapons(Easter_Egg_Tier,Paul_Cum_Shield_Name,Paul_Cum_Shield_Description,{'DEF':25,'FUN':paul_cum_shield_fun})
-Mael_Schlong=Weapons(Easter_Egg_Tier,Mael_Schlong_Name,Mael_Schlong_Description,{'STA':95,'ATQ':700,'FUN':mael_schlong_fun})
-Arty_Pride_Book=Weapons(Easter_Egg_Tier,Arty_Pride_Book_Name,Arty_Pride_Book_Description,{'MP':95,'ATQ':700,'FUN':arty_pride_book_fun})
+Troll_King_Shield=Weapons(Relic_Tier,Troll_King_Shield_Name,Troll_King_Shield_Description,{'DEF':35,'FUN':[trollking_shield_fun,Trollking_fun_desc]})
+Conquerer_Sword=Weapons(Relic_Tier,Conquerer_Sword_Name,Conquerer_Sword_Description,{'STA':50,'ATQ':50,'FUN':[conquerer_sword_fun,Conquerer_Sword_fun_desc]})
+Elf_King_Epitome=Weapons(Relic_Tier,Elf_King_Epitome_Name,Elf_King_Epitome_Description,{'MP':50,'ATQ':50,'FUN':[elfking_epitome_fun,Elfking_Epitome_fun_desc]})
+Purgatory_Door=Weapons(Arcanic_Tier,Purgatory_Door_Name,Purgatory_Door_Description,{'DEF':50,'FUN':[purgatory_door_fun,Purgatory_Door_fun_desc]})
+Divine_Light_Blade=Weapons(Arcanic_Tier,Divine_Light_Blade_Name,Divine_Light_Blade_Description,{'STA':75,'ATQ':100,'FUN':[divine_light_blade_fun,Divine_Light_Blade_fun_desc]})
+Satan_Profecy=Weapons(Arcanic_Tier,Satan_Profecy_Name,Satan_Profecy_Description,{'MP':75,'ATQ':100,'FUN':[satan_profecy_fun,Satan_Profecy_fun_desc]})
 
 try: #import basique de sauvegarde
   from saves import *
   Weapon=eval(Weapon)
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=''
+
+from continuity import *
 
 currentAction=0
 print(Welcome)
@@ -155,9 +150,7 @@ def anal(q):
         currentAction=int(q.split('_')[1])
     elif q[:4]=='AskP':
         print('\t'.join(eval(q)))
-        anal(eval('QOut'+q[4:])[int(input())-1])
+        anal(eval('QOut'+q[4:])[easter(int(input()))-1])
+
 while True:
 	anal(Next[currentAction])
-	
-	
-	
