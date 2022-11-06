@@ -74,10 +74,10 @@ Desc1_1_room="You wake up in a dark room, you light a candle. You are home in yo
 AskP1_room=[Default_ask, "Go downstairs", "Look at the books"]
 
 Desc1_4_books="You see three heavy books"
-AskP1_books=['Read "The Holy Guide"', 'Read "History of Trolland"', 'Read "The Science of Magic"', "Exit"]
-Desc1_5_holyGuide="haha in dev"
-Desc1_6_history="haha in dev"
-Desc1_7_magicScience="haha in dev"
+AskP1_books=[Default_ask,'Read "The Holy Guide"', 'Read "History of Trolland"', 'Read "The Science of Magic"', "Exit"]
+Desc1_5_holyGuide="haha in dev1"
+Desc1_6_history="haha in dev2"
+Desc1_7_magicScience="haha in dev3"
 
 QOut1_books=["Desc1_5_holyGuide", "Desc1_6_history", "Desc1_7_magicScience", "AskP1_room"]
 
@@ -97,6 +97,5 @@ AskP1_boom=[Default_ask, "Go back inside the house", "Run towards the mana store
 
 QOut1_downstairs=["Desc1_8_outside", "Desc1_10_backUpstairs", "Desc1_11_lookAround"]
 
-QOut1_boom=["Desc1_12_backInside", b, c]
-QOut1_backOutside=[a, b]
-
+QOut1_boom=["Desc1_12_backInside", 'b', 'c']
+QOut1_backOutside=['a', 'b']
