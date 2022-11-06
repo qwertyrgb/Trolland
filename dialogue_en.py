@@ -83,11 +83,11 @@ QOut1_books=["Desc1_5_holyGuide", "Desc1_6_history", "Desc1_7_magicScience", "As
 
 Desc1_2_downstairs="You go down the old, creaky wooden stairs as a warm, welcoming living room reveals itself to your eyes. It's small, yet full of benevolance. You notice your mother isn't there. You see a note on the table, next to a fresh pot of blood colored lilies"
 Desc1_3_note="The note reads : \"Finally up :D ? I'm going to buy mana charges downtown, be back home soon. Love, Mom <3\""
-AskP1_downstairs=[DefaultAsk, "Go outside", "Go back upstairs", "Look around"]
+AskP1_downstairs=[Default_ask, "Go outside", "Go back upstairs", "Look around"]
 Desc1_10_backUpstairs="You go back up the stairs, and arrive in your bedroom"
 Desc1_11_lookAround="To your right is stone fireplace, with, above it a brick chimnee, and no fire within it, in front of it is a leather sofa, facing towards it with a low table. The house is decorated with sketches of trees hung up on the wall, one catches your attention, it shows a deer walking through the dense forest, you seem to percieve a faint silhouette drawn behind it, though it may just be your imagination. On your left is the kitchen, with next to it the door to your mother's bedroom."
 Desc1_12_backInside="You go back inside, but the house is shaking, it seems very unsafe, you exit the house for now. You come back outside and the screams continue."
-AskP1_backOutside=[DefaultAsk, "Run towards the screams", "Run in the direction opposite to the screams"]
+AskP1_backOutside=[Default_ask, "Run towards the screams", "Run in the direction opposite to the screams"]
 
 QOut1_room=["Desc1_2_downstairs", "Desc1_4_books"]
 
