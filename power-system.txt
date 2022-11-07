@@ -3,23 +3,35 @@ STAT RANGE :
 DEF : 0-99 (100)
 ATQ : 1-1000
 HP : 1-2000
-MP : 5-100
-STA : 5-100
-LVL : 0-100
+MP : 0-100
+STA : 0-100
+LVL : 1-100
+
+BASE PLAYER STATS:
+DEF : 0
+ATQ : 10 
+HP : 20
+MP : 0
+STA : 0
+LVL : 1
 
 POWER EQUATION :
 
 off_pow : SCA * ATQ + (MP or STA) * ATQ
 dmg : HP - (off_pow - DEFE/100 * off_pow)
 
+3 ATTACK SLOTS, choose one then choose target(s) :
+CONTROL, AOE, DMG
+
 SPELLS :
 
-- Fireball
-- Explosion
-- Dante's Wrath
-- Water Blade
-- Tsunami
-- Divine Water Purge
+-
+-
+-
+
+-
+-
+-
 
 ATTACKS :
 
