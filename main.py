@@ -162,7 +162,13 @@ def anal(q):
           anal(eval('QOut'+q[4:])[int(rep)-1])
         except:
           print('Answer not accepted')
+    elif q[:4]=='PSay':
+	psay(eval(q))
+	currentAction=int(q.split('_')[1])
+    elif q[:4]='Osay':
+	osay(eval(q))
+	currentAction=int(q.split('_')[1])
     return 1
 
 while anal(Next[currentAction]):
-  1
+  pass
