@@ -23,13 +23,13 @@ def change(q):#voir fonction say
 				q[i]=' '+q[i]
 	return q
 
-def psay(msg):
-	print("       ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n       ∥{0[0]}∥\n       ∥{0[1]}∥\n       ∥{0[2]}∥\n       ∥{0[3]}∥\n       ∥{0[4]}∥\n       ∥{0[5]}∥\n       ∥{0[6]}∥\n   ⊏＝＝{0[7]}∥\n    ＼{0[8]}∥\n      ＼{0[9]}∥\n        ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐".format(msg))
+def psay(who,msg):
+	print(who+"\n       ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n       ∥{0[0]}∥\n       ∥{0[1]}∥\n       ∥{0[2]}∥\n       ∥{0[3]}∥\n       ∥{0[4]}∥\n       ∥{0[5]}∥\n       ∥{0[6]}∥\n   ⊏＝＝{0[7]}∥\n    ＼{0[8]}∥\n      ＼{0[9]}∥\n        ⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐".format(msg))
 
-def osay(msg):
-	print("⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n∥{0[0]}∥                                  \n∥{0[1]}∥                                   \n∥{0[2]}∥                                   \n∥{0[3]}∥                                   \n∥{0[4]}∥ \n∥{0[5]}∥\n∥{0[6]}∥\n∥{0[7]}＝＝＝⊐\n∥{0[8]}ノ\n∥{0[9]}ノ \n⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐".format(msg))
+def osay(who,msg):
+	print(who+"\n⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n∥{0[0]}∥                                  \n∥{0[1]}∥                                   \n∥{0[2]}∥                                   \n∥{0[3]}∥                                   \n∥{0[4]}∥ \n∥{0[5]}∥\n∥{0[6]}∥\n∥{0[7]}＝＝＝⊐\n∥{0[8]}ノ\n∥{0[9]}ノ \n⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐".format(msg))
 
-def say(msg,what):#dire des messages avec une décoration
+def say(who,msg,what):#dire des messages avec une décoration
 	q=[]
 	i=30
 	prev=0
@@ -41,25 +41,26 @@ def say(msg,what):#dire des messages avec une décoration
 	q.append(msg[prev:i])
 	j=0
 	while j<len(q):
-		what(change(q[j:j+10]))
+		what(who,change(q[j:j+10]))
 		j+=10
 
+def combat(desc,xp,ennemies):
+	print(desc)
+	def turn():
+		rep=input('\t'.join(['. '.join([str(i),eval(Attacks[i])]) for i in range(len(Attacks))]))
+		Attacks[int(rep)].fight()
+		
+
 class Entities: # définit toutes les entités du jeu (joueur, enemis..)
-	def __init__(self,defe,atq,hp,mp,sta,lvl):
-		self.defe=defe
-		self.atq=atq
-		self.hp=hp
-		self.mp=mp
-		self.sta=sta
-		self.lvl=lvl
+	def __init__(self,DEF,ATQ,HP,MP,STA,LVL):
+		self.DEF=DEF
+		self.ATQ=ATQ
+		self.HP=HP
+		self.MP=MP
+		self.STA=STA
+		self.LVL=LVL
 
-Troll1=Entities(1,2,3,4,5,6)#commence à defe (pas def car non enft) donc defe=1,atq=2..
-Troll2=Entities(1,2,3,4,5,6)
-High_Elf1=Entities(1,2,3,4,5,6)
-Your_Mum=Entities(1,2,3,4,5,6)
-
-#Exemple de la variable Enemies, les enemis actuellement présents en combat
-Enemies=[Troll1,Troll2,High_Elf1,Your_Mum]
+Player=Entities(0,10,20,0,0,1)
 
 # Définition des fonctions qui affectent les stats avec les armes
 # Comme par exemple 'defence has a 10% chance to be doubled'
@@ -101,6 +102,12 @@ def writebonus(x):
   if type(x)==list:# Si c'est une liste, c'est une fonction logique ahahahahahahahahahahahahahahahahahaha
     return x[1]
 
+class Attacks:
+	def __init__(self,name,fight):#fight is a lambda function
+		self.name=name
+		self.fight=fight
+
+
 class Weapons: # définit toutes les armes du jeu
   def __init__(self,tier,name,description,bonus={}): # Pas forcément de bonus, d'ou le bonus={} (si aucune valeur n'est donnée, bonus sera {})
     '''Initialise ( __init__ ) les armes du jeu'''
@@ -137,8 +144,10 @@ from easter_eggs import *
 try: #import basique de sauvegarde
   from saves import *
   Weapon=eval(Weapon)
+  Attack_slots=[eval(i) for i in Attack_slots]
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
-  Weapon=''
+  Weapon=None
+  Attack_slots=[None,None,None]
   currentAction=0
 
 from continuity import *
@@ -150,8 +159,7 @@ def anal(q):
         print(eval(q))
         currentAction=int(q.split('_')[1])
     elif q[:4]=='AskP':
-        print('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(len(eval(q)))]))
-        rep=input().lower()
+        rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(len(eval(q)))])).lower()
         easter(rep)
         if rep=='exit':
           save=open('saves.py','w')
@@ -163,11 +171,13 @@ def anal(q):
         except:
           print('Answer not accepted')
     elif q[:4]=='PSay':
-	psay(eval(q))
+	what('Player: ',eval(q),psay)
 	currentAction=int(q.split('_')[1])
     elif q[:4]='Osay':
-	osay(eval(q))
+	what(eval(eval(q)[0]),eval(eval(q)[1])),osay)
 	currentAction=int(q.split('_')[1])
+    elif q[:4]='Cmbt':
+	combat(q)
     return 1
 
 while anal(Next[currentAction]):
