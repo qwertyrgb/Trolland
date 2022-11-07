@@ -1,5 +1,5 @@
 ## ! WELCOME TO TROLLAND !
-## 🄯 Copyleft 2022 - All wrongs reversed to Lamereary Industries - ширАко and SoulTaker
+## © Copyright 2022 - All rights reserved to Lamereary Industries - ширАко and SoulTaker
 
 from random import randint
 
