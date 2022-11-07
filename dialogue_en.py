@@ -56,7 +56,7 @@ Welcome="Welcome to Trolland, this is a solely console high fantasy game with a 
 #"Desc" - Description - (x) - console talking to player, decribing environment
 #"OSay" - Other Say - (a,b) - character talking, content 
 #"PSay" - Player Say - (a) - main character speaking 
-#"Cmbt" - Combat - (a,[b]) - fight description, opponent list
+#"Cmbt" - Combat - (a, b, [c]) - fight description, XP gained if fight is won, opponent list
 #"AskP" - Ask Player - (a, b, c, d, e) - prompt description, options (1:4) : can be undefined
 
 #"QOut" - Question Output - (a, b, c, d) - outputs (1:4) of question w same desc and index
