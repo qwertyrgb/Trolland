@@ -171,13 +171,13 @@ def anal(q):
         except:
           print('Answer not accepted')
     elif q[:4]=='PSay':
-	what('Player: ',eval(q),psay)
-	currentAction=int(q.split('_')[1])
+      what('Player: ',eval(q),psay)
+      currentAction=int(q.split('_')[1])
     elif q[:4]='Osay':
-	what(eval(eval(q)[0]),eval(eval(q)[1])),osay)
-	currentAction=int(q.split('_')[1])
+      what(eval(eval(q)[0]),eval(eval(q)[1])),osay)
+      currentAction=int(q.split('_')[1])
     elif q[:4]='Cmbt':
-	combat(q)
+      combat(q)
     return 1
 
 while anal(Next[currentAction]):
