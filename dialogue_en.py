@@ -97,5 +97,7 @@ AskP1_boom=[Default_ask, "Go back inside the house", "Run towards the mana store
 
 QOut1_downstairs=["Desc1_8_outside", "Desc1_10_backUpstairs", "Desc1_11_lookAround"]
 
-QOut1_boom=["Desc1_12_backInside", 'b', 'c']
-QOut1_backOutside=['a', 'b']
+Desc1_13_runScreams=" "
+
+QOut1_boom=["Desc1_12_backInside", "b", "c"]
+QOut1_backOutside=["a", "b"]
