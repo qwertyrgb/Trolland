@@ -24,5 +24,6 @@ InjuredTroll=["DEF=0",
               "MAX_HP=1750",
               "STA=150",
               "MP=150",
+              "LVL=??"
               "WEAP=Sword of Justice",
               InjuredTroll_AL]
