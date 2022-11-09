@@ -174,7 +174,7 @@ def anal(q):
       what('Player: ',eval(q),psay)
       currentAction=int(q.split('_')[1])
     elif q[:4]=='Osay':
-      what(eval(eval(q)[0]),eval(eval(q)[1])),osay)
+      what(eval(eval(q)[0]),eval(eval(q)[1]),osay)
       currentAction=int(q.split('_')[1])
     elif q[:4]=='Cmbt':
       combat(q)
