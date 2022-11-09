@@ -25,7 +25,7 @@ CONTROL, AOE, DMG
 
 SPELLS :
 
--
+- Flame (50%, none)
 -
 -
 
@@ -35,12 +35,12 @@ SPELLS :
 
 ATTACKS :
 
-- AOE
-- AOE+
-- AOE++
-- DMG 
-- DMG+ 
-- DMG++ 
+- Slash (50%, none)
+- 
+- 
+- 
+- 
+- 
 
 WEAPONS (can hold 1 at a time) : 
 
