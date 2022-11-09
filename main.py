@@ -3,13 +3,23 @@
 
 from random import randint
 
-lang=input('Language, Langue, Lengua? ').lower() #demande la langue, puis met l'input en minuscule
+
+print("""
+----------------------------------------
+                SETUP
+no save detected""")
+ 
+
+lang=input('Enter language: ').lower() #demande la langue, puis met l'input en minuscule
 if lang in ['es','español','espanol']:
   from dialogue_es import * #si c'est espa, importe les dialogues espa
 elif lang in ['fr','français','francais']:
   from dialogue_fr import *
 else: 
   from dialogue_en import * #Anglais par défaut
+Username=input('Enter username: ')
+
+print('----------------------------------------')
 
 def change(q):#voir fonction say
 	while len(q)<10:
@@ -44,23 +54,60 @@ def say(who,msg,what):#dire des messages avec une décoration
 		what(who,change(q[j:j+10]))
 		j+=10
 
-def combat(desc,xp,ennemies):
+def combat(desc,xp,enemies):
 	print(desc)
 	def turn():
-		rep=input('\t'.join(['. '.join([str(i),eval(Attacks[i])]) for i in range(len(Attacks))]))
-		Attacks[int(rep)].fight()
+		for Enemy in enemies:
+			if Enemy.HP>0:
+				print("""{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX} 
+----------------------------------
+|{1}| 
+----------------------------------
+""".format(Enemy,'■'*int(32*(Enemy.HP/Enemy.HPMAX))+'□'*int(32-32*(Enemy.HP/Enemy.HPMAX))))
+			else:print(Enemy.name,'dead')
+			Player.HP-=Enemy.attack.fight(Player)
+			print(Enemy.name,'attacks',Player.name,'with',Enemy.attack.name)
+		print("""{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX}
+----------------------------------
+|{1}|
+----------------------------------
+| {2[0].name} | {2[1].name} | {2[2].name} |
+----------------------------------
+""".format(Player,'■'*int(32*(Player.HP/Player.HPMAX))+'□'*int(32-32*(Player.HP/Player.HPMAX)),Attack_slots))
+		target=enemies[int(input('Target: '))]
+		target.HP-=Attack_slots[int(input('Attack: '))].fight(target)
+	while 1:
+		turn()
+		if Player.HP<=0:
+			print('T con wlh')
+			return
+		if all(i.HP<=0 for i in enemies):
+			print('GG FDP')
+			return
 		
+class Attacks:
+	def __init__(self,name,fight):#fight is a lambda function
+		self.name=name
+		self.fight=fight
+
+Flame=Attacks('Flame',lambda x:x.HPMAX//2)
+Slash=Attacks('Slash',lambda x:x.HPMAX//2)
+Smash=Attacks('Smash',lambda x:3*x.HPMAX//10)
 
 class Entities: # définit toutes les entités du jeu (joueur, enemis..)
-	def __init__(self,DEF,ATQ,HP,MP,STA,LVL):
+	def __init__(self,name,DEF,ATQ,HPMAX,MP,STA,LVL,attack=''):
+		self.name=name
 		self.DEF=DEF
 		self.ATQ=ATQ
-		self.HP=HP
+		self.HP=HPMAX
+		self.HPMAX=HPMAX
 		self.MP=MP
 		self.STA=STA
 		self.LVL=LVL
+		self.attack=attack
 
-Player=Entities(0,10,20,0,0,1)
+Player=Entities(Username,0,10,20,0,0,1)
+Troll=Entities('Stupid troll',0,10000000000,20,0,0,1,Smash)
 
 # Définition des fonctions qui affectent les stats avec les armes
 # Comme par exemple 'defence has a 10% chance to be doubled'
@@ -102,12 +149,6 @@ def writebonus(x):
   if type(x)==list:# Si c'est une liste, c'est une fonction logique ahahahahahahahahahahahahahahahahahaha
     return x[1]
 
-class Attacks:
-	def __init__(self,name,fight):#fight is a lambda function
-		self.name=name
-		self.fight=fight
-
-
 class Weapons: # définit toutes les armes du jeu
   def __init__(self,tier,name,description,bonus={}): # Pas forcément de bonus, d'ou le bonus={} (si aucune valeur n'est donnée, bonus sera {})
     '''Initialise ( __init__ ) les armes du jeu'''
@@ -121,8 +162,6 @@ class Weapons: # définit toutes les armes du jeu
     print(self.name+', Tier:',self.tier+'\n'+', '.join(tuple(': '.join((i,writebonus(self.bonus[i]))) for i in self.bonus))+'\n'+self.description)
 
 Magical_Tome=Weapons(Rare_Tier,Magical_Tome_Name,Magical_Tome_Description,{'MP':5, 'ATQ':10}) #voir power-system.txt + dialogue_en.py
-
-
 Wooden_Shield=Weapons(Common_Tier,Wooden_Shield_Name,Wooden_Shield_Description) #pas de bonus dans power-system.txt
 Wooden_Sword=Weapons(Common_Tier,Wooden_Sword_Name,Wooden_Sword_Description)
 Old_Grimoire=Weapons(Common_Tier,Old_Grimoire_Name,Old_Grimoire_Description)
@@ -138,6 +177,7 @@ Elf_King_Epitome=Weapons(Relic_Tier,Elf_King_Epitome_Name,Elf_King_Epitome_Descr
 Purgatory_Door=Weapons(Arcanic_Tier,Purgatory_Door_Name,Purgatory_Door_Description,{'DEF':50,'FUN':[purgatory_door_fun,Purgatory_Door_fun_desc]})
 Divine_Light_Blade=Weapons(Arcanic_Tier,Divine_Light_Blade_Name,Divine_Light_Blade_Description,{'STA':75,'ATQ':100,'FUN':[divine_light_blade_fun,Divine_Light_Blade_fun_desc]})
 Satan_Profecy=Weapons(Arcanic_Tier,Satan_Profecy_Name,Satan_Profecy_Description,{'MP':75,'ATQ':100,'FUN':[satan_profecy_fun,Satan_Profecy_fun_desc]})
+Justice_Sword=Weapons(Monster_Tier,Justice_Sword_Name,Justice_Sword_Description)
 
 from easter_eggs import *
 
@@ -159,7 +199,7 @@ def anal(q):
         print(eval(q))
         currentAction=int(q.split('_')[1])
     elif q[:4]=='AskP':
-        rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(len(eval(q)))])).lower()
+        rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(len(eval(q)))])+'\n').lower()
         easter(rep)
         if rep=='exit':
           save=open('saves.py','w')
@@ -180,5 +220,9 @@ def anal(q):
       combat(q)
     return 1
 
-while anal(Next[currentAction]):
-  pass
+#while anal(Next[currentAction]):
+#  pass
+
+print()
+combat('Ce combat est pour le plus long penis',80,[Troll])
+print()
