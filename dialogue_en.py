@@ -123,11 +123,11 @@ SetV1_26_shield=["WEAP", "Wooden_Shield"]
 SetV1_27_book=["WEAP", "Old_Grimoire"]
 
 OSay1_28_kamisaFight=["Kamisa", "Trolls may be, in normal times, the most dangerous being within this realm, but you can beat him. I'll help you, hero. He cannot kill you, his weapon will only take a fraction of your life, terrifying if you possess much, but for a weakling like you, it is a blessing. I'll weaken him, you finish it off."
-Desc1_preFight="A bright flash of light forces your eyes closed, and once you open them, the troll seems near death."
-Cmbt1_29_troll=['You rush towards the troll, and engage combat.',10,['Troll1']]
-Desc1_30_hide="The troll is dead. No old man. Old man dead ? You must hide. Hide within the house. You are hidden within the house."
-Desc1_31_wait="You wait for minutes, hours, or even maybe days. You hide until you hear nothing, nothing but silence. Then you open the door, and see ashes, nothing left of such a grand city but ashes. Except the single house you were staying in, completely untouched. You go out, look around, nothing but the smell of burnt blood. You look behind you, the house is gone. You drop down on your knees."
-PSay1_32_alone="Why..? Why am I alive ? WHY AM I ALIVE ?? I hate them. I'll kill all of them. Every single one of them. I'LL OBLITERATE EVERY TROLL ON THIS PLANET !"
+Desc1_29_preFight="A bright flash of light forces your eyes closed, and once you open them, the troll seems near death."
+Cmbt1_30_troll=['You rush towards the troll, and engage combat.',10,['Troll1']]
+Desc1_31_hide="The troll is dead. No old man. Old man dead ? You must hide. Hide within the house. You are hidden within the house."
+Desc1_32_wait="You wait for minutes, hours, or even maybe days. You hide until you hear nothing, nothing but silence. Then you open the door, and see ashes, nothing left of such a grand city but ashes. Except the single house you were staying in, completely untouched. You go out, look around, nothing but the smell of burnt blood. You look behind you, the house is gone. You drop down on your knees."
+PSay1_33_alone="Why..? Why am I alive ? WHY AM I ALIVE ?? I hate them. I'll kill all of them. Every single one of them. I'LL OBLITERATE EVERY TROLL ON THIS PLANET !"
 EndG1_demoOver="END, for now. The rest coming soon"
 
 QOut1_weaponChoice=["SetV1_25_sword", "SetV1_26_shield", "SetV1_27_book"]
