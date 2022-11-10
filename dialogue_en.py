@@ -137,4 +137,3 @@ QOut1_chased=["Desc1_21_runTroll", "EndG1_troll"]
 QOut1_boom=["Desc1_12_backInside", "Desc1_13_runScreams", "Desc1_22_runOpposite"]
 QOut1_backOutside=["Desc1_13_runScreams", "Desc1_22_runOpposite"]
 
-
