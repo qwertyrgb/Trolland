@@ -97,7 +97,7 @@ def combat(desc,xp,enemies):
 			save=open('saves.py','w')
 			print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
 			print('currentAction='+str(currentAction),file=save)
-			print('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"',file=save)
+			print(eval('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"'),file=save)
 			return
 		target.HP-=Attack_Slots[int(rep)].fight(target)
 		if all(i.HP<=0 for i in enemies):
@@ -160,10 +160,6 @@ def elfking_epitome_fun():
 def purgatory_door_fun():pass
 def divine_light_blade_fun():pass
 def satan_profecy_fun():pass
-def paul_cum_shield_fun():pass
-def mael_schlong_fun():pass
-def arty_pride_book_fun():pass
-
 
 def writebonus(x):
   if type(x)==int:
@@ -234,7 +230,7 @@ def anal(q):
           save=open('saves.py','w')
           print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
           print('currentAction='+str(currentAction),file=save)
-          print('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"',file=save)
+          print('Attack_Slots="'+eval(list(globals())[list(globals().values()).index(Attack_Slots)])+'"',file=save)
           return
         try:
           return anal(eval('QOut'+q[4:])[int(rep)-1])
