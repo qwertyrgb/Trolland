@@ -2,6 +2,8 @@
 ## © Copyright 2022 - All rights reserved to Lamereary Industries - ширАко and SoulTaker
 
 from random import randint
+from time import sleep
+
 
 print('----------------------------------------\n                SETUP')
 try: #import basique de sauvegarde
@@ -17,7 +19,7 @@ elif lang in ['fr','français','francais']:
   from dialogue_fr import *
 else: 
   from dialogue_en import * #Anglais par défaut
-  
+
 Username=input('Enter username: ')
 
 print('----------------------------------------')
@@ -59,53 +61,56 @@ def say(msg,what,who=''):#dire des messages avec une décoration
 		j+=10
 
 def combat(desc,xp,enemies):
-	print(desc)
-	enemies=[eval(i) for i in enemies]
-	def turn():
-		for Enemy in enemies:
-			if Enemy.HP>0:# lignes longues,on n'aime pas la PEP 8
-				print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX} \n----------------------------------\n|{1}| \n----------------------------------\n'.format(Enemy,'■'*int(32*(Enemy.HP/Enemy.HPMAX))+'□'*int(32-32*(Enemy.HP/Enemy.HPMAX))))
-				Player.HP-=Enemy.attack.fight(Player)
-				if Player.HP<=0:
-					print('You died! :(')
-					return
-			else:print(Enemy.name,'dead')
-			print(Enemy.name,'attacks',Player.name,'with',Enemy.attack.name)
-		print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX}\n----------------------------------\n|{1}|\n----------------------------------\n| {2[0].name} | {2[1].name} | {2[2].name} |\n----------------------------------\n'.format(Player,'■'*int(32*(Player.HP/Player.HPMAX))+'□'*int(32-32*(Player.HP/Player.HPMAX)),Attack_Slots))
-		rep=input('Target: ')
-		if rep=='stats':
-			print('----------------------------------------')
-			Weapon.info()
-			print('Attack_Slots:',[i.name for i in Attack_Slots])
-			print('----------------------------------------')
-			rep=input('Target: ')
-		if rep=='exit':
-			save=open('saves.py','w')
-			print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
-			print('currentAction='+str(currentAction),file=save)
-			print('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"',file=save)
-			return
-		target=enemies[int(rep)]
-		rep=input('Attack: ')
-		if rep=='stats':
-			print('----------------------------------------')
-			Weapon.info()
-			print('Attack_Slots:',[i.name for i in Attack_Slots])
-			print('----------------------------------------')
-			rep=input('Attack: ')
-		if rep=='exit':
-			save=open('saves.py','w')
-			print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
-			print('currentAction='+str(currentAction),file=save)
-			print(eval('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"'),file=save)
-			return
-		target.HP-=Attack_Slots[int(rep)].fight(target)
-		if all(i.HP<=0 for i in enemies):
-			print('You killed all the ennemies and won the fight!')
-			return
-		return 1
-	while turn():
-		pass
+  print(desc)
+  enemies=[eval(i) for i in enemies]
+  def turn():
+    for Enemy in enemies:
+      if Enemy.HP>0:# lignes longues,on n'aime pas la PEP 8
+        print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX} \n----------------------------------\n|{1}| \n----------------------------------\n'.format(Enemy,'■'*int(32*(Enemy.HP/Enemy.HPMAX))+'□'*int(32-32*(Enemy.HP/Enemy.HPMAX))))
+        Player.HP-=Enemy.attack.fight(Player)
+        if Player.HP<=0:
+          print('You died! :(')
+          return
+      else:print(Enemy.name,'dead')
+      print(Enemy.name,'attacks',Player.name,'with',Enemy.attack.name)
+    print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX}\n----------------------------------\n|{1}|\n----------------------------------\n| {2[0].name} | {2[1].name} | {2[2].name} |\n----------------------------------\n'.format(Player,'■'*int(32*(Player.HP/Player.HPMAX))+'□'*int(32-32*(Player.HP/Player.HPMAX)),Attack_Slots))
+    if len(enemies)>1:
+      rep=input('Target: ')
+      if rep=='stats':
+        print('----------------------------------------')
+        Weapon.info()
+        print('Attack_Slots:',[i.name for i in Attack_Slots])
+        print('----------------------------------------')
+        rep=input('Target: ')
+      if rep=='exit':
+        save=open('saves.py','w')
+        print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
+        print('currentAction='+str(currentAction),file=save)
+        print('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"',file=save)
+        return
+      target=enemies[int(rep)-1]
+    else:
+      target=enemies[0]
+    rep=input('Attack: '+'\t'.join(['. '.join([str(i),Attack_Slots[i-1].name]) for i in range(1,len(Attack_Slots)+1)])+'\n')
+    if rep=='stats':
+      print('----------------------------------------')
+      Weapon.info()
+      print('Attack_Slots:'+'\t'.join([i.name for i in Attack_Slots]))
+      print('----------------------------------------')
+      rep=input('Attack: '+'\t'.join(['. '.join([str(i),Attack_Slots[i].name]) for i in range(len(Attack_Slots))])+'\n')
+    if rep=='exit':
+      save=open('saves.py','w')
+      print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
+      print('currentAction='+str(currentAction),file=save)
+      print(eval('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"'),file=save)
+      return
+    target.HP-=Attack_Slots[int(rep)].fight(target)
+    if all(i.HP<=0 for i in enemies):
+      print('You killed all the ennemies and won the fight!')
+      return
+    return 1
+  while turn():
+    sleep(1)
 		
 class Attacks:
 	def __init__(self,name,fight):#fight is a lambda function
@@ -129,7 +134,7 @@ class Entities: # définit toutes les entités du jeu (joueur, enemis..)
 		self.attack=attack
 
 Player=Entities(Username,0,10,20,0,0,1)
-Troll1=Entities('Stupid troll',0,10000000000,20,0,0,1,Smash)
+Troll1=Entities('Injured troll',0,6,6,0,0,1,Smash)
 
 # Définition des fonctions qui affectent les stats avec les armes
 # Comme par exemple 'defence has a 10% chance to be doubled'
@@ -254,4 +259,4 @@ def anal(q):
     return 1
 
 while anal(Next[currentAction]):
-  pass
+  sleep(1)
