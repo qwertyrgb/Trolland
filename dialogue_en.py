@@ -48,7 +48,7 @@ Divine_Light_Blade_fun_desc='Damage is doubled if attacker has more than 50% HP 
 Satan_Profecy_Name="Satan's Profecy"
 Satan_Profecy_Description="An extremely powerful divine relic. It contains half of Satan's knowledge within it, and contains an eternity of dark knowledge and magic."
 Satan_Profecy_fun_desc='Inflicts curse on attacked that drains 20% of their MAX_HP per turn'
-Justice_Sword_Name='Justice Sword'
+Justice_Sword_Name='Sword of Justice'
 Justice_Sword_Description='The sword of the Troll'
 
 Welcome="Welcome to Trolland, this is a solely console high fantasy game with a cool storyline and a bunch of fights."
