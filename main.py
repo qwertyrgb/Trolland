@@ -3,12 +3,10 @@
 
 from random import randint
 
-
-print("""
-----------------------------------------
-                SETUP
-no save detected""")
- 
+try: #import basique de sauvegarde
+  from savegarde import *
+except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
+	print('\n----------------------------------------\n                SETUP\nno save detected')
 
 lang=input('Enter language: ').lower() #demande la langue, puis met l'input en minuscule
 if lang in ['es','español','espanol']:
@@ -60,33 +58,23 @@ def combat(desc,xp,enemies):
 	enemies=[eval(i) for i in enemies]
 	def turn():
 		for Enemy in enemies:
-			if Enemy.HP>0:
-				print("""{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX} 
-----------------------------------
-|{1}| 
-----------------------------------
-""".format(Enemy,'■'*int(32*(Enemy.HP/Enemy.HPMAX))+'□'*int(32-32*(Enemy.HP/Enemy.HPMAX))))
+			if Enemy.HP>0:# lignes longues,on n'aime pas la PEP 8
+				print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX} \n----------------------------------\n|{1}| \n----------------------------------\n'.format(Enemy,'■'*int(32*(Enemy.HP/Enemy.HPMAX))+'□'*int(32-32*(Enemy.HP/Enemy.HPMAX))))
 				Player.HP-=Enemy.attack.fight(Player)
+				if Player.HP<=0:
+					print('T con wlh')
+					return
 			else:print(Enemy.name,'dead')
-			Player.HP-=Enemy.attack.fight(Player)
 			print(Enemy.name,'attacks',Player.name,'with',Enemy.attack.name)
-		print("""{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX}
-----------------------------------
-|{1}|
-----------------------------------
-| {2[0].name} | {2[1].name} | {2[2].name} |
-----------------------------------
-""".format(Player,'■'*int(32*(Player.HP/Player.HPMAX))+'□'*int(32-32*(Player.HP/Player.HPMAX)),Attack_slots))
+		print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX}\n----------------------------------\n|{1}|\n----------------------------------\n| {2[0].name} | {2[1].name} | {2[2].name} |\n----------------------------------\n'.format(Player,'■'*int(32*(Player.HP/Player.HPMAX))+'□'*int(32-32*(Player.HP/Player.HPMAX)),Attack_slots))
 		target=enemies[int(input('Target: '))]
 		target.HP-=Attack_slots[int(input('Attack: '))].fight(target)
-	while 1:
-		turn()
-		if Player.HP<=0:
-			print('T con wlh')
-			return
 		if all(i.HP<=0 for i in enemies):
 			print('GG FDP')
 			return
+		return 1
+	while turn():
+		pass
 		
 class Attacks:
 	def __init__(self,name,fight):#fight is a lambda function
@@ -211,21 +199,24 @@ def anal(q):
           return
         try:
           anal(eval('QOut'+q[4:])[int(rep)-1])
+          #return
         except:
           print('Answer not accepted')
+          #return
     elif q[:4]=='PSay':
-      what('Player: ',eval(q),psay)
+      say('Player: ',eval(q),psay)
       currentAction=int(q.split('_')[1])
-    elif q[:4]=='Osay':
-      what(eval(eval(q)[0]),eval(eval(q)[1]),osay)
+    elif q[:4]=='OSay':
+      say(eval(q)[0],eval(eval(q)[1]),osay)
       currentAction=int(q.split('_')[1])
     elif q[:4]=='Cmbt':
       combat(*eval(q))
+      return
     elif q[:4]=='SetV':
         exec(eval(q)[0]+'='+eval(q)[1])
     elif q[:4]=='EndG':
-	print(eval(q))
-	return
+        print(eval(q))
+        return
     return 1
 
 while anal(Next[currentAction]):
