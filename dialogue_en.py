@@ -118,9 +118,9 @@ OSay1_23_kamisaGo=["Kamisa", "'Child. Go inside this house, choose a weapon for 
 Desc1_24_Insinct="For an odd reason, you do not question him a second. You enter the house and see three weapons : an old Grimoire, a wooden sword, a wooden shield. You have a feeling once you chose a weapon, you can never go back."
 AskP1_weaponChoice=["Which one do you prefer ?", "The Sword", "The Shield", "The Magical Book"]
 
-SetV1_25_sword=["WEAP", "Wooden_Sword"]
-SetV1_26_shield=["WEAP", "Wooden_Shield"]
-SetV1_27_book=["WEAP", "Old_Grimoire"]
+SetV1_25_sword=["Weapon", "Wooden_Sword"]
+SetV1_26_shield=["Weapon", "Wooden_Shield"]
+SetV1_27_book=["Weapon", "Old_Grimoire"]
 SetV1_34_slash=["Attack_Slots[0]", "Slash"]
 SetV1_35_flame=["Attack_Slots[0]", "Flame"]
 
