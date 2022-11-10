@@ -23,8 +23,8 @@ Next=['Desc1_1_room', #boot
       'OSay1_19_trollSpeak', #18
       'Desc1_20_chased', #19
       'AskP1_chased', #20
-      'OSay1_23_kamisaGo'#21
-      'OSay1_23_kamisaGo' #22
+      'OSay1_23_kamisaGo',#21
+      'OSay1_23_kamisaGo',#22
       'Desc1_24_Insinct', #23
       'AskP1_weaponChoice', #24
       'SetV1_34_slash', #25
