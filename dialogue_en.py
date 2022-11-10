@@ -121,6 +121,8 @@ AskP1_weaponChoice=["Which one do you prefer ?", "The Sword", "The Shield", "The
 SetV1_25_sword=["WEAP", "Wooden_Sword"]
 SetV1_26_shield=["WEAP", "Wooden_Shield"]
 SetV1_27_book=["WEAP", "Old_Grimoire"]
+SetV1_34_slash=["Attack_Slots[0]", "Slash"]
+SetV1_35_flame=["Attack_Slots[0]", "Flame"]
 
 OSay1_28_kamisaFight=["Kamisa", "Trolls may be, in normal times, the most dangerous being within this realm, but you can beat him. I'll help you, hero. He cannot kill you, his weapon will only take a fraction of your life, terrifying if you possess much, but for a weakling like you, it is a blessing. I'll weaken him, you finish it off."
 Desc1_29_preFight="A bright flash of light forces your eyes closed, and once you open them, the troll seems near death."
