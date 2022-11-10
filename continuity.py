@@ -19,7 +19,7 @@ Next=['Desc1_1_room', #boot
       'Desc1_15_isThat', #14
       'PSay1_16_mom', #15
       'OSay1_17_dontCome', #16
-      'Desc1_18_miamYum', #17
+      'Desc1_18_momDead', #17
       'OSay1_19_trollSpea', #18
       'Desc1_20_chased', #19
       'AskP1_chased' #20
