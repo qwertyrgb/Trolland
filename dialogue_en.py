@@ -110,9 +110,29 @@ OSay1_19_trollSpeak=["Troll", "'GWWWWA-HWA-HWA-HWA, HOOMAN SPRLOOF! OH! HOOMAN!!
 Desc1_20_chased="The troll sees you, and starts walking towards you."
 AskP1_chased=[Default_ask, "Run away", "Face the troll"]
 EndG1_troll="The troll crushes you with his fist."
+Desc1_21_runTroll="You run in the opposite direction as fast as you can. The vision of a pool of blood with what you could assume to be human remains strikes your eyes despite their shield of tears. In an attempt to lose the beast slowly approaching behind you, you take a turn left. You see an old man, still, but completely undamaged."
 
-QOut1_chased=["EndG1_troll", "b"]
-QOut1_boom=["Desc1_12_backInside", "Desc1_13_runScreams", "c"]
-QOut1_backOutside=["Desc1_13_runScreams", "b"]
+Desc1_22_runOpposite="You run in a direction, turning everytime you hear the screams get louder, left, and then left again. You see an old man, standing still, unphased, and completely undamaged."
 
-Cmbt1_troll=['The troll is willing to fight!',10,['Troll1']]
+OSay1_23_kamisaGo=["Kamisa", "Child. Go inside this house, choose a weapon for your adventure. And fight."]
+Desc1_24_Insinct="For an odd reason, you do not question him a second. You enter the house and see three weapons : an old Grimoire, a wooden sword, a wooden shield. You have a feeling once you chose a weapon, you can never go back."
+AskP1_weaponChoice=["Which one do you prefer ?", "The Sword", "The Shield", "The Magical Book"]
+
+SetV1_25_sword=["WEAP", "Wooden_Sword"]
+SetV1_26_shield=["WEAP", "Wooden_Shield"]
+SetV1_27_book=["WEAP", "Old_Grimoire"]
+
+OSay1_28_kamisaFight=["Kamisa", "Trolls may be, in normal times, the most dangerous being within this realm, but you can beat him. I'll help you, hero. He cannot kill you, his weapon will only take a fraction of your life, terrifying if you possess much, but for a weakling like you, it is a blessing. I'll weaken him, you finish it off."
+Desc1_preFight="A bright flash of light forces your eyes closed, and once you open them, the troll seems near death."
+Cmbt1_29_troll=['You rush towards the troll, and engage combat.',10,['Troll1']]
+Desc1_30_hide="The troll is dead. No old man. Old man dead ? You must hide. Hide within the house. You are hidden within the house."
+Desc1_31_wait="You wait for minutes, hours, or even maybe days. You hide until you hear nothing, nothing but silence. Then you open the door, and see ashes, nothing left of such a grand city but ashes. Except the single house you were staying in, completely untouched. You go out, look around, nothing but the smell of burnt blood. You look behind you, the house is gone. You drop down on your knees."
+PSay1_32_alone="Why..? Why am I alive ? WHY AM I ALIVE ?? I hate them. I'll kill all of them. Every single one of them. I'LL OBLITERATE EVERY TROLL ON THIS PLANET !"
+EndG1_demoOver="END, for now. The rest coming soon"
+
+QOut1_weaponChoice=["SetV1_25_sword", "SetV1_26_shield", "SetV1_27_book"]
+QOut1_chased=["Desc1_21_runTroll", "EndG1_troll"]
+QOut1_boom=["Desc1_12_backInside", "Desc1_13_runScreams", "Desc1_22_runOpposite"]
+QOut1_backOutside=["Desc1_13_runScreams", "Desc1_22_runOpposite"]
+
+
