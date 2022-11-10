@@ -20,7 +20,7 @@ Next=['Desc1_1_room', #boot
       'PSay1_16_mom', #15
       'OSay1_17_dontCome', #16
       'Desc1_18_momDead', #17
-      'OSay1_19_trollSpea', #18
+      'OSay1_19_trollSpeak', #18
       'Desc1_20_chased', #19
       'AskP1_chased' #20
      ]
