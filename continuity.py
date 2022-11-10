@@ -15,5 +15,13 @@ Next=['Desc1_1_room', #boot
       'AskP1_room', #10
       'AskP1_downstairs', #11
       'AskP1_backOutside', #12
+      'OSay1_14_momScream', #13
+      'Desc1_15_isThat', #14
+      'PSay1_16_mom', #15
+      'OSay1_17_dontCome', #16
+      'Desc1_18_miamYum', #17
+      'OSay1_19_trollSpea', #18
+      'Desc1_20_chased', #19
+      'AskP1_chased' #20
      ]
 
