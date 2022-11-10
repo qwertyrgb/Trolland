@@ -108,7 +108,7 @@ OSay1_17_dontCome=["Mom", "NO !!! {0} don't come near me"]
 Desc1_18_momDead="Another person appears behind her, wait, no, that's no person... THAT'S A TROLL ! He raises his giant fist, and crushes your agonising mother under it, without even using his sword."
 OSay1_19_trollSpeak=["Troll", "GWWWWA-HWA-HWA-HWA, HOOMAN SPRLOOF! OH! HOOMAN!!"]
 Desc1_20_chased="The troll sees you, and starts walking towards you."
-AskP1_chased=[DefaultAsk, "Run away", "Face the troll"]
+AskP1_chased=[Default_ask, "Run away", "Face the troll"]
 EndG1_troll="The troll crushes you with his fist."
 
 QOut1_chased=["EndG1_troll", "b"]
