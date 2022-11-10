@@ -17,6 +17,7 @@ elif lang in ['fr','français','francais']:
   from dialogue_fr import *
 else: 
   from dialogue_en import * #Anglais par défaut
+  
 Username=input('Enter username: ')
 
 print('----------------------------------------')
@@ -179,7 +180,7 @@ Divine_Light_Blade=Weapons(Arcanic_Tier,Divine_Light_Blade_Name,Divine_Light_Bla
 Satan_Profecy=Weapons(Arcanic_Tier,Satan_Profecy_Name,Satan_Profecy_Description,{'MP':75,'ATQ':100,'FUN':[satan_profecy_fun,Satan_Profecy_fun_desc]})
 Justice_Sword=Weapons(Monster_Tier,Justice_Sword_Name,Justice_Sword_Description)
 
-from easter_eggs import *
+#from easter_eggs import *
 
 try: #import basique de sauvegarde
   from saves import *
@@ -187,7 +188,7 @@ try: #import basique de sauvegarde
   Attack_slots=[eval(i) for i in Attack_slots]
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=None
-  Attack_slots=[None,None,None]
+  Attack_slots=[Flame,Slash,Smash]
   currentAction=0
 
 from continuity import *
@@ -200,7 +201,7 @@ def anal(q):
         currentAction=int(q.split('_')[1])
     elif q[:4]=='AskP':
         rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(len(eval(q)))])+'\n').lower()
-        easter(rep)
+        #easter(rep)
         if rep=='exit':
           save=open('saves.py','w')
           print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
@@ -217,12 +218,10 @@ def anal(q):
       what(eval(eval(q)[0]),eval(eval(q)[1]),osay)
       currentAction=int(q.split('_')[1])
     elif q[:4]=='Cmbt':
-      combat(q)
+      combat(eval(q))
+    elif q[:4]=='setV':
+        exec(eval(q)[0]+'='+eval(q)[1])
     return 1
 
-#while anal(Next[currentAction]):
-#  pass
-
-print()
-combat('Ce combat est pour le plus long penis',80,[Troll])
-print()
+while anal(Next[currentAction]):
+  pass
