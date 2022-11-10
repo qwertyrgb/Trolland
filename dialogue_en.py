@@ -124,7 +124,7 @@ SetV1_27_book=["Weapon", "Old_Grimoire"]
 SetV1_34_slash=["Attack_Slots[0]", "Slash"]
 SetV1_35_flame=["Attack_Slots[0]", "Flame"]
 
-OSay1_28_kamisaFight=["Kamisa", "'Trolls may be, in normal times, the most dangerous being within this realm, but you can beat him. I'll help you, hero. He cannot kill you, his weapon will only take a fraction of your life, terrifying if you possess much, but for a weakling like you, it is a blessing. I'll weaken him, you finish it off.'"]
+OSay1_28_kamisaFight=["Kamisa", "'Trolls may be, in normal times, the most dangerous being within this realm, but you can beat him. I\'ll help you, hero. He cannot kill you, his weapon will only take a fraction of your life, terrifying if you possess much, but for a weakling like you, it is a blessing. I\'ll weaken him, you finish it off.'"]
 Desc1_29_preFight="A bright flash of light forces your eyes closed, and once you open them, the troll seems near death."
 Cmbt1_30_troll=['You rush towards the troll, and engage combat.',10,['Troll1']]
 Desc1_31_hide="The troll is dead. No old man. Old man dead ? You must hide. Hide within the house. You are hidden within the house."
