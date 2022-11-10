@@ -114,7 +114,7 @@ Desc1_21_runTroll="You run in the opposite direction as fast as you can. The vis
 
 Desc1_22_runOpposite="You run in a direction, turning everytime you hear the screams get louder, left, and then left again. You see an old man, standing still, unphased, and completely undamaged."
 
-OSay1_23_kamisaGo=["Kamisa", "Child. Go inside this house, choose a weapon for your adventure. And fight."]
+OSay1_23_kamisaGo=["Kamisa", "'Child. Go inside this house, choose a weapon for your adventure. And fight.'"]
 Desc1_24_Insinct="For an odd reason, you do not question him a second. You enter the house and see three weapons : an old Grimoire, a wooden sword, a wooden shield. You have a feeling once you chose a weapon, you can never go back."
 AskP1_weaponChoice=["Which one do you prefer ?", "The Sword", "The Shield", "The Magical Book"]
 
@@ -124,7 +124,7 @@ SetV1_27_book=["WEAP", "Old_Grimoire"]
 SetV1_34_slash=["Attack_Slots[0]", "Slash"]
 SetV1_35_flame=["Attack_Slots[0]", "Flame"]
 
-OSay1_28_kamisaFight=["Kamisa", "Trolls may be, in normal times, the most dangerous being within this realm, but you can beat him. I'll help you, hero. He cannot kill you, his weapon will only take a fraction of your life, terrifying if you possess much, but for a weakling like you, it is a blessing. I'll weaken him, you finish it off."]
+OSay1_28_kamisaFight=["Kamisa", "'Trolls may be, in normal times, the most dangerous being within this realm, but you can beat him. I'll help you, hero. He cannot kill you, his weapon will only take a fraction of your life, terrifying if you possess much, but for a weakling like you, it is a blessing. I'll weaken him, you finish it off.'"]
 Desc1_29_preFight="A bright flash of light forces your eyes closed, and once you open them, the troll seems near death."
 Cmbt1_30_troll=['You rush towards the troll, and engage combat.',10,['Troll1']]
 Desc1_31_hide="The troll is dead. No old man. Old man dead ? You must hide. Hide within the house. You are hidden within the house."
