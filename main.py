@@ -57,6 +57,7 @@ def say(msg,what,who=''):#dire des messages avec une décoration
 		j+=10
 
 def combat(desc,xp,enemies):
+	currentAction=int(q.split('_')[1])
 	print(desc)
 	enemies=[eval(i) for i in enemies]
 	def turn():
@@ -181,7 +182,7 @@ try: #import basique de sauvegarde
   Attack_slots=[eval(i) for i in Attack_slots]
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=None
-  Attack_slots=[Flame,Slash,Smash]
+  Attack_slots=[]
   currentAction=0
 
 from continuity import *
@@ -209,15 +210,16 @@ def anal(q):
           print('Answer not accepted')
           #return
     elif q[:4]=='PSay':
+      currentAction=int(q.split('_')[1])
       say(eval(q),psay,'Player: ')
-      currentAction=int(q.split('_')[1])
     elif q[:4]=='OSay':
-      say(eval(eval(q)[1]),osay,eval(q)[0])
       currentAction=int(q.split('_')[1])
+      say(eval(eval(q)[1]),osay,eval(q)[0])
     elif q[:4]=='Cmbt':
       combat(*eval(q))
       return
     elif q[:4]=='SetV':
+	currentAction=int(q.split('_')[1])
         exec(eval(q)[0]+'='+eval(q)[1])
     elif q[:4]=='EndG':
         print(eval(q))
