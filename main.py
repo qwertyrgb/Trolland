@@ -38,7 +38,10 @@ def psay(who,msg):
 def osay(who,msg):
 	print(who+"\n⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n∥{0[0]}∥                                  \n∥{0[1]}∥                                   \n∥{0[2]}∥                                   \n∥{0[3]}∥                                   \n∥{0[4]}∥ \n∥{0[5]}∥\n∥{0[6]}∥\n∥{0[7]}＝＝＝⊐\n∥{0[8]}ノ\n∥{0[9]}ノ \n⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐".format(msg))
 
-def say(who,msg,what):#dire des messages avec une décoration
+def desc(who,msg):
+	print('⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n∥{0[0]}∥                                  \n∥{0[1]}∥                                   \n∥{0[2]}∥                                   \n∥{0[3]}∥                                   \n∥{0[4]}∥ \n∥{0[5]}∥\n∥{0[6]}∥\n∥{0[7]}∥\n∥{0[8]}∥\n∥{0[9]}∥ \n⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n'.format(msg))
+	
+def say(msg,what,who=''):#dire des messages avec une décoration
 	q=[]
 	i=30
 	prev=0
@@ -187,7 +190,7 @@ print(Welcome)
 def anal(q):
     global currentAction
     if q[:4]=='Desc':
-        print(eval(q))
+        say(eval(q),desc)
         currentAction=int(q.split('_')[1])
     elif q[:4]=='AskP':
         rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(len(eval(q)))])+'\n').lower()
@@ -204,10 +207,10 @@ def anal(q):
           print('Answer not accepted')
           #return
     elif q[:4]=='PSay':
-      say('Player: ',eval(q),psay)
+      say(eval(q),psay,'Player: ')
       currentAction=int(q.split('_')[1])
     elif q[:4]=='OSay':
-      say(eval(q)[0],eval(eval(q)[1]),osay)
+      say(eval(eval(q)[1]),osay,eval(q)[0])
       currentAction=int(q.split('_')[1])
     elif q[:4]=='Cmbt':
       combat(*eval(q))
