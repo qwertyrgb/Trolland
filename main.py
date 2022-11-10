@@ -179,10 +179,10 @@ Justice_Sword=Weapons(Monster_Tier,Justice_Sword_Name,Justice_Sword_Description)
 try: #import basique de sauvegarde
   from saves import *
   Weapon=eval(Weapon)
-  Attack_slots=[eval(i) for i in Attack_slots]
+  Attack_Slots=[eval(i) for i in Attack_slots]
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=None
-  Attack_slots=[]
+  Attack_Slots=[]
   currentAction=0
 
 from continuity import *
