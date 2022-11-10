@@ -57,7 +57,6 @@ def say(msg,what,who=''):#dire des messages avec une décoration
 		j+=10
 
 def combat(desc,xp,enemies):
-	currentAction=int(q.split('_')[1])
 	print(desc)
 	enemies=[eval(i) for i in enemies]
 	def turn():
@@ -66,15 +65,15 @@ def combat(desc,xp,enemies):
 				print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX} \n----------------------------------\n|{1}| \n----------------------------------\n'.format(Enemy,'■'*int(32*(Enemy.HP/Enemy.HPMAX))+'□'*int(32-32*(Enemy.HP/Enemy.HPMAX))))
 				Player.HP-=Enemy.attack.fight(Player)
 				if Player.HP<=0:
-					print('T con wlh')
+					print('You died!')
 					return
 			else:print(Enemy.name,'dead')
 			print(Enemy.name,'attacks',Player.name,'with',Enemy.attack.name)
-		print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX}\n----------------------------------\n|{1}|\n----------------------------------\n| {2[0].name} | {2[1].name} | {2[2].name} |\n----------------------------------\n'.format(Player,'■'*int(32*(Player.HP/Player.HPMAX))+'□'*int(32-32*(Player.HP/Player.HPMAX)),Attack_slots))
+		print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX}\n----------------------------------\n|{1}|\n----------------------------------\n| {2[0].name} | {2[1].name} | {2[2].name} |\n----------------------------------\n'.format(Player,'■'*int(32*(Player.HP/Player.HPMAX))+'□'*int(32-32*(Player.HP/Player.HPMAX)),Attack_Slots))
 		target=enemies[int(input('Target: '))]
-		target.HP-=Attack_slots[int(input('Attack: '))].fight(target)
+		target.HP-=Attack_Slots[int(input('Attack: '))].fight(target)
 		if all(i.HP<=0 for i in enemies):
-			print('GG FDP')
+			print('You killed all the enemies and won the fight!)
 			return
 		return 1
 	while turn():
@@ -179,7 +178,7 @@ Justice_Sword=Weapons(Monster_Tier,Justice_Sword_Name,Justice_Sword_Description)
 try: #import basique de sauvegarde
   from saves import *
   Weapon=eval(Weapon)
-  Attack_Slots=[eval(i) for i in Attack_slots]
+  Attack_Slots=[eval(i) for i in Attack_Slots]
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   Weapon=None
   Attack_Slots=[]
@@ -204,11 +203,9 @@ def anal(q):
           print('currentAction='+str(currentAction),file=save)
           return
         try:
-          anal(eval('QOut'+q[4:])[int(rep)-1])
-          #return
+          return anal(eval('QOut'+q[4:])[int(rep)-1])
         except:
           print('Answer not accepted')
-          #return
     elif q[:4]=='PSay':
       currentAction=int(q.split('_')[1])
       say(eval(q),psay,'Player: ')
@@ -217,13 +214,13 @@ def anal(q):
       say(eval(eval(q)[1]),osay,eval(q)[0])
     elif q[:4]=='Cmbt':
       combat(*eval(q))
-      return
+      currentAction=int(q.split('_')[1])
     elif q[:4]=='SetV':
-        currentAction=int(q.split('_')[1])
-        exec(eval(q)[0]+'='+eval(q)[1])
+      currentAction=int(q.split('_')[1])
+      exec(eval(q)[0]+'='+eval(q)[1],globals())
     elif q[:4]=='EndG':
-        print(eval(q))
-        return
+      print(eval(q))
+      return
     return 1
 
 while anal(Next[currentAction]):
