@@ -20,15 +20,15 @@ Username=input('Enter username: ')
 
 print('----------------------------------------')
 
-def change(q):#voir fonction say
+def change(q,what):#voir fonction say
 	while len(q)<10:
 		q.append('')
 		if len(q)<10:
 			q.insert(0,'')
 	for i in range(10):
-		while len(q[i])<34+(i==8)*2+(i in [7,8,9]):
+		while len(q[i])<29+((i==8)*2+(i in [7,8,9]))*(what!=desc):
 			q[i]+=' '
-			if len(q[i])<34+(i==8)*2+(i in [7,8,9]):
+			if len(q[i])<29+((i==8)*2+(i in [7,8,9]))*(what!=desc):
 				q[i]=' '+q[i]
 	return q
 
@@ -53,7 +53,7 @@ def say(msg,what,who=''):#dire des messages avec une décoration
 	q.append(msg[prev:i])
 	j=0
 	while j<len(q):
-		what(who,change(q[j:j+10]))
+		what(who,change(q[j:j+10],what))
 		j+=10
 
 def combat(desc,xp,enemies):
@@ -193,7 +193,9 @@ def anal(q):
         say(eval(q),desc)
         currentAction=int(q.split('_')[1])
     elif q[:4]=='AskP':
-        rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(len(eval(q)))])+'\n').lower()
+        print()
+        print(eval(q)[0],end='\t')
+        rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(1,len(eval(q)))])+'\n').lower()
         #easter(rep)
         if rep=='exit':
           save=open('saves.py','w')
