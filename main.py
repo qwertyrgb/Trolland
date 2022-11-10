@@ -221,8 +221,11 @@ def anal(q):
       currentAction=int(q.split('_')[1])
     elif q[:4]=='Cmbt':
       combat(*eval(q))
-    elif q[:4]=='setV':
+    elif q[:4]=='SetV':
         exec(eval(q)[0]+'='+eval(q)[1])
+    elif q[:4]=='EndG':
+	print(eval(q))
+	return
     return 1
 
 while anal(Next[currentAction]):
