@@ -97,7 +97,17 @@ AskP1_boom=[Default_ask, "Go back inside the house", "Run towards the mana store
 
 QOut1_downstairs=["Desc1_8_outside", "Desc1_10_backUpstairs", "Desc1_11_lookAround"]
 
-Desc1_13_runScreams=" "
+Desc1_13_runScreams="You run towards the screams, and seem to distinguish a silhouette towards the end of the street."
+OSay1_14_momScream=["uknown","AAAAAAAAAAAAHHH, SOMEONE, ANYONE HELP ME PLEASE, I BEG OF YOU!"]
+Desc1_15_isThat="That's your mother voice! As you run closer, you distinguish her more clearly, there's no doubt, that's her."
+PSay1_16_mom="MOM !"
+OSay1_17_dontCome=["Mom", "NO !!! {0} don't come near me"]
+Desc1_18_momDead="Another person appears behind her, wait, no, that's no person... THAT'S A TROLL ! He raises his giant fist, and crushes your agonising mother under it, without even using his sword."
+OSay1_19_trollSpeak=["Troll", "GWWWWA-HWA-HWA-HWA, HOOMAN SPRLOOF! OH! HOOMAN!!"]
+Desc1_20_chased="The troll sees you, and starts walking towards you."
+AskP1_chased=[DefaultAsk, "Run away", "Face the troll"]
+EndG1_troll="The troll crushes you with his fist."
 
-QOut1_boom=["Desc1_12_backInside", "b", "c"]
-QOut1_backOutside=["a", "b"]
+QOut1_chased=["Dead1_troll", "b"]
+QOut1_boom=["Desc1_12_backInside", "Desc1_13_runScreams", "c"]
+QOut1_backOutside=["Desc1_13_runScreams", "b"]
