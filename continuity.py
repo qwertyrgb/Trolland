@@ -22,6 +22,19 @@ Next=['Desc1_1_room', #boot
       'Desc1_18_momDead', #17
       'OSay1_19_trollSpeak', #18
       'Desc1_20_chased', #19
-      'AskP1_chased' #20
+      'AskP1_chased', #20
+      'OSay1_23_kamisaGo'#21
+      'OSay1_23_kamisaGo' #22
+      'Desc1_24_Insinct', #23
+      'AskP1_weaponChoice', #24
+      'OSay1_28_kamisaFight', #25
+      'OSay1_28_kamisaFight', #26
+      'OSay1_28_kamisaFight' #27
+      'Desc1_29_preFight', #28
+      'Cmbt1_30_troll', #29
+      'Desc1_31_hide', #30
+      'Desc1_32_wait', #31
+      'PSay1_33_alone', #32
+      'EndG1_demoOver' #33
      ]
 
