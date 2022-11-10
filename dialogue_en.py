@@ -78,9 +78,9 @@ AskP1_room=[Default_ask, "Go downstairs", "Look at the books"]
 
 Desc1_4_books="You see three heavy books"
 AskP1_books=[Default_ask,'Read "The Holy Guide"', 'Read "History of Trolland"', 'Read "The Science of Magic"', "Exit"]
-Desc1_5_holyGuide="haha in dev1"
-Desc1_6_history="haha in dev2"
-Desc1_7_magicScience="haha in dev3"
+Desc1_5_holyGuide="You have to kill the Troll king"
+Desc1_6_history="One day, a troll more intelligent than the others created the elves Sylvain Durif in order to destroy the earth"
+Desc1_7_magicScience="For magic stuff, go buy mana"
 
 QOut1_books=["Desc1_5_holyGuide", "Desc1_6_history", "Desc1_7_magicScience", "AskP1_room"]
 
@@ -101,12 +101,12 @@ AskP1_boom=[Default_ask, "Go back inside the house", "Run towards the mana store
 QOut1_downstairs=["Desc1_8_outside", "Desc1_10_backUpstairs", "Desc1_11_lookAround"]
 
 Desc1_13_runScreams="You run towards the screams, and seem to distinguish a silhouette towards the end of the street."
-OSay1_14_momScream=["uknown","AAAAAAAAAAAAHHH, SOMEONE, ANYONE HELP ME PLEASE, I BEG OF YOU!"]
+OSay1_14_momScream=["Unknown","'AAAAAAAAAAAAHHH, SOMEONE, ANYONE HELP ME PLEASE, I BEG OF YOU!'"]
 Desc1_15_isThat="That's your mother voice! As you run closer, you distinguish her more clearly, there's no doubt, that's her."
 PSay1_16_mom="MOM !"
-OSay1_17_dontCome=["Mom", "NO !!! {0} don't come near me"]
+OSay1_17_dontCome=["Mom",'"NO !!! {0} don\'t come near me!".format(Player.name)']
 Desc1_18_momDead="Another person appears behind her, wait, no, that's no person... THAT'S A TROLL ! He raises his giant fist, and crushes your agonising mother under it, without even using his sword."
-OSay1_19_trollSpeak=["Troll", "GWWWWA-HWA-HWA-HWA, HOOMAN SPRLOOF! OH! HOOMAN!!"]
+OSay1_19_trollSpeak=["Troll", "'GWWWWA-HWA-HWA-HWA, HOOMAN SPRLOOF! OH! HOOMAN!!'"]
 Desc1_20_chased="The troll sees you, and starts walking towards you."
 AskP1_chased=[Default_ask, "Run away", "Face the troll"]
 EndG1_troll="The troll crushes you with his fist."
@@ -114,3 +114,5 @@ EndG1_troll="The troll crushes you with his fist."
 QOut1_chased=["EndG1_troll", "b"]
 QOut1_boom=["Desc1_12_backInside", "Desc1_13_runScreams", "c"]
 QOut1_backOutside=["Desc1_13_runScreams", "b"]
+
+Cmbt1_troll=['The troll is willing to fight!',10,['Troll1']]
