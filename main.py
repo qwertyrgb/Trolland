@@ -57,6 +57,7 @@ def say(who,msg,what):#dire des messages avec une décoration
 
 def combat(desc,xp,enemies):
 	print(desc)
+	enemies=[eval(i) for i in enemies]
 	def turn():
 		for Enemy in enemies:
 			if Enemy.HP>0:
@@ -65,6 +66,7 @@ def combat(desc,xp,enemies):
 |{1}| 
 ----------------------------------
 """.format(Enemy,'■'*int(32*(Enemy.HP/Enemy.HPMAX))+'□'*int(32-32*(Enemy.HP/Enemy.HPMAX))))
+				Player.HP-=Enemy.attack.fight(Player)
 			else:print(Enemy.name,'dead')
 			Player.HP-=Enemy.attack.fight(Player)
 			print(Enemy.name,'attacks',Player.name,'with',Enemy.attack.name)
@@ -108,7 +110,7 @@ class Entities: # définit toutes les entités du jeu (joueur, enemis..)
 		self.attack=attack
 
 Player=Entities(Username,0,10,20,0,0,1)
-Troll=Entities('Stupid troll',0,10000000000,20,0,0,1,Smash)
+Troll1=Entities('Stupid troll',0,10000000000,20,0,0,1,Smash)
 
 # Définition des fonctions qui affectent les stats avec les armes
 # Comme par exemple 'defence has a 10% chance to be doubled'
@@ -218,7 +220,7 @@ def anal(q):
       what(eval(eval(q)[0]),eval(eval(q)[1]),osay)
       currentAction=int(q.split('_')[1])
     elif q[:4]=='Cmbt':
-      combat(eval(q))
+      combat(*eval(q))
     elif q[:4]=='setV':
         exec(eval(q)[0]+'='+eval(q)[1])
     return 1
