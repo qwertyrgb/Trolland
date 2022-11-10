@@ -27,14 +27,16 @@ Next=['Desc1_1_room', #boot
       'OSay1_23_kamisaGo' #22
       'Desc1_24_Insinct', #23
       'AskP1_weaponChoice', #24
-      'OSay1_28_kamisaFight', #25
-      'OSay1_28_kamisaFight', #26
-      'OSay1_28_kamisaFight' #27
+      'SetV1_34_slash', #25
+      'SetV1_35_flame', #26
+      'SetV1_35_flame',#27
       'Desc1_29_preFight', #28
       'Cmbt1_30_troll', #29
       'Desc1_31_hide', #30
       'Desc1_32_wait', #31
       'PSay1_33_alone', #32
-      'EndG1_demoOver' #33
+      'EndG1_demoOver', #33
+      'OSay1_28_kamisaFight', #34
+      'OSay1_28_kamisaFight' #35
      ]
 
