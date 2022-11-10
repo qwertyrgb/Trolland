@@ -7,6 +7,7 @@ Hero_Tier='Heroic'
 Relic_Tier='Relic'
 Arcanic_Tier='Arcanic'
 Easter_Egg_Tier='Easter Egg'
+Monster_Tier='Monster'
 
 # Les armes
 Wooden_Shield_Name='Wooden Shield'
@@ -47,6 +48,8 @@ Divine_Light_Blade_fun_desc='Damage is doubled if attacker has more than 50% HP 
 Satan_Profecy_Name="Satan's Profecy"
 Satan_Profecy_Description="An extremely powerful divine relic. It contains half of Satan's knowledge within it, and contains an eternity of dark knowledge and magic."
 Satan_Profecy_fun_desc='Inflicts curse on attacked that drains 20% of their MAX_HP per turn'
+Justice_Sword_Name='Justice Sword'
+Justice_Sword_Description='The sword of the Troll'
 
 Welcome="Welcome to Trolland, this is a solely console high fantasy game with a cool storyline and a bunch of fights."
 
@@ -108,6 +111,6 @@ Desc1_20_chased="The troll sees you, and starts walking towards you."
 AskP1_chased=[DefaultAsk, "Run away", "Face the troll"]
 EndG1_troll="The troll crushes you with his fist."
 
-QOut1_chased=["Dead1_troll", "b"]
+QOut1_chased=["EndG1_troll", "b"]
 QOut1_boom=["Desc1_12_backInside", "Desc1_13_runScreams", "c"]
 QOut1_backOutside=["Desc1_13_runScreams", "b"]
