@@ -3,10 +3,12 @@
 
 from random import randint
 
+print('----------------------------------------\n                SETUP')
 try: #import basique de sauvegarde
-  from savegarde import *
+  from saves import *
+  print('loading save..')
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
-	print('\n----------------------------------------\n                SETUP\nno save detected')
+	print('no save detected')
 
 lang=input('Enter language: ').lower() #demande la langue, puis met l'input en minuscule
 if lang in ['es','español','espanol']:
@@ -65,15 +67,41 @@ def combat(desc,xp,enemies):
 				print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX} \n----------------------------------\n|{1}| \n----------------------------------\n'.format(Enemy,'■'*int(32*(Enemy.HP/Enemy.HPMAX))+'□'*int(32-32*(Enemy.HP/Enemy.HPMAX))))
 				Player.HP-=Enemy.attack.fight(Player)
 				if Player.HP<=0:
-					print('You died!')
+					print('You died! :(')
 					return
 			else:print(Enemy.name,'dead')
 			print(Enemy.name,'attacks',Player.name,'with',Enemy.attack.name)
 		print('{0.name} | LVL: {0.LVL} | HP: {0.HP}/{0.HPMAX}\n----------------------------------\n|{1}|\n----------------------------------\n| {2[0].name} | {2[1].name} | {2[2].name} |\n----------------------------------\n'.format(Player,'■'*int(32*(Player.HP/Player.HPMAX))+'□'*int(32-32*(Player.HP/Player.HPMAX)),Attack_Slots))
-		target=enemies[int(input('Target: '))]
-		target.HP-=Attack_Slots[int(input('Attack: '))].fight(target)
+		rep=input('Target: ')
+		if rep=='stats':
+			print('----------------------------------------')
+			Weapon.info()
+			print('Attack_Slots:',[i.name for i in Attack_Slots])
+			print('----------------------------------------')
+			rep=input('Target: ')
+		if rep=='exit':
+			save=open('saves.py','w')
+			print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
+			print('currentAction='+str(currentAction),file=save)
+			print('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"',file=save)
+			return
+		target=enemies[int(rep)]
+		rep=input('Attack: ')
+		if rep=='stats':
+			print('----------------------------------------')
+			Weapon.info()
+			print('Attack_Slots:',[i.name for i in Attack_Slots])
+			print('----------------------------------------')
+			rep=input('Attack: ')
+		if rep=='exit':
+			save=open('saves.py','w')
+			print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
+			print('currentAction='+str(currentAction),file=save)
+			print('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"',file=save)
+			return
+		target.HP-=Attack_Slots[int(rep)].fight(target)
 		if all(i.HP<=0 for i in enemies):
-			print('You killed all the enemies and won the fight!)
+			print('You killed all the ennemies and won the fight!')
 			return
 		return 1
 	while turn():
@@ -180,8 +208,8 @@ try: #import basique de sauvegarde
   Weapon=eval(Weapon)
   Attack_Slots=[eval(i) for i in Attack_Slots]
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
-  Weapon=None
-  Attack_Slots=[]
+  Weapon=''
+  Attack_Slots=['']*3
   currentAction=0
 
 from continuity import *
@@ -197,10 +225,16 @@ def anal(q):
         print(eval(q)[0],end='\t')
         rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(1,len(eval(q)))])+'\n').lower()
         #easter(rep)
+        if rep=='stats':
+          print('----------------------------------------')
+          Weapon.info()
+          print('Attack_Slots:',Attack_Slots)
+          print('----------------------------------------')
         if rep=='exit':
           save=open('saves.py','w')
           print('Weapon="'+list(globals())[list(globals().values()).index(Weapon)]+'"',file=save)
           print('currentAction='+str(currentAction),file=save)
+          print('Attack_Slots="'+list(globals())[list(globals().values()).index(Attack_Slots)]+'"',file=save)
           return
         try:
           return anal(eval('QOut'+q[4:])[int(rep)-1])
