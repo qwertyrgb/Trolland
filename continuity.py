@@ -16,7 +16,7 @@ Next=['Desc1_1_room', #boot
       'AskP1_downstairs', #11
       'AskP1_backOutside', #12
       'OSay1_14_momScream', #13
-      'Desc1_15_isThat', #14
+      'Desc1_15_isThatSooo', #14
       'PSay1_16_mom', #15
       'OSay1_17_dontCome', #16
       'Desc1_18_momDead', #17
@@ -39,4 +39,3 @@ Next=['Desc1_1_room', #boot
       'OSay1_28_kamisaFight', #34
       'OSay1_28_kamisaFight' #35
      ]
-
