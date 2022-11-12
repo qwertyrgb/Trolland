@@ -78,9 +78,9 @@ AskP1_room=[Default_ask, "Go downstairs", "Look at the books"]
 
 Desc1_4_books="You see three heavy books"
 AskP1_books=[Default_ask,'Read "The Holy Guide"', 'Read "History of Trolland"', 'Read "The Science of Magic"', "Exit"]
-Desc1_5_holyGuide="You have to kill the Troll king"
-Desc1_6_history="One day, a troll more intelligent than the others created the elves Sylvain Durif in order to destroy the earth"
-Desc1_7_magicScience="For magic stuff, go buy mana"
+Desc1_5_holyGuide="You kill the Troll"
+Desc1_6_history="One day,Sylvain destroy the earth"
+Desc1_7_magicScience="For magic stuff, go buy mana you poor"
 
 QOut1_books=["Desc1_5_holyGuide", "Desc1_6_history", "Desc1_7_magicScience", "AskP1_room"]
 
@@ -102,7 +102,7 @@ QOut1_downstairs=["Desc1_8_outside", "Desc1_10_backUpstairs", "Desc1_11_lookArou
 
 Desc1_13_runScreams="You run towards the screams, and seem to distinguish a silhouette towards the end of the street."
 OSay1_14_momScream=["Unknown","'AAAAAAAAAAAAHHH, SOMEONE, ANYONE HELP ME PLEASE, I BEG OF YOU!'"]
-Desc1_15_isThat="That's your mother voice! As you run closer, you distinguish her more clearly, there's no doubt, that's her."
+Desc1_15_isThatSooo="That's your mother voice! As you run closer, you distinguish her more clearly, there's no doubt, that's her."
 PSay1_16_mom="MOM !"
 OSay1_17_dontCome=["Mom",'"NO !!! {0} don\'t come near me!".format(Player.name)']
 Desc1_18_momDead="Another person appears behind her, wait, no, that's no person... THAT'S A TROLL ! He raises his giant fist, and crushes your agonising mother under it, without even using his sword."
