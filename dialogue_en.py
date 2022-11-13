@@ -70,25 +70,26 @@ Welcome="Welcome to Trolland, this is a solely console high fantasy game with a 
 #AskP1_x_y=[Default_ask, "a", "b", "c", "d"]
 #QOut1_x_y=[a, b, c, d]
 
-Default_ask="What do you chose to do?"
-
+Default_ask="What do you choose to do?"
+Not_Accepted='Answer not accepted'
 #ARC 1 : Tutorial Village 
+
 Desc1_1_room="You wake up in a dark room, you light a candle. You are home in your room, there are old books in the library on your left, and a staircase going down on your right."
 AskP1_room=[Default_ask, "Go downstairs", "Look at the books"]
 
 Desc1_4_books="You see three heavy books"
 AskP1_books=[Default_ask,'Read "The Holy Guide"', 'Read "History of Trolland"', 'Read "The Science of Magic"', "Exit"]
-Desc1_5_holyGuide="You kill the Troll"
-Desc1_6_history="One day,Sylvain destroy the earth"
-Desc1_7_magicScience="For magic stuff, go buy mana you poor"
+Desc1_5_holyGuide="You kill the Troll."
+Desc1_6_history="One day, Sylvain Durif will destroy the Earth."
+Desc1_7_magicScience="For magic stuff, go buy mana you poor."
 
 QOut1_books=["Desc1_5_holyGuide", "Desc1_6_history", "Desc1_7_magicScience", "AskP1_room"]
 
-Desc1_2_downstairs="You go down the old, creaky wooden stairs as a warm, welcoming living room reveals itself to your eyes. It's small, yet full of benevolance. You notice your mother isn't there. You see a note on the table, next to a fresh pot of blood colored lilies"
+Desc1_2_downstairs="You go down the old, creaky wooden stairs as a warm, welcoming living room reveals itself to your eyes. It's small, yet full of benevolence. You notice your mother isn't there. You see a note on the table, next to a fresh pot of blood colored lilies."
 Desc1_3_note="The note reads : \"Finally up :D ? I'm going to buy mana charges downtown, be back home soon. Love, Mom <3\""
 AskP1_downstairs=[Default_ask, "Go outside", "Go back upstairs", "Look around"]
 Desc1_10_backUpstairs="You go back up the stairs, and arrive in your bedroom"
-Desc1_11_lookAround="To your right is stone fireplace, with, above it a brick chimnee, and no fire within it, in front of it is a leather sofa, facing towards it with a low table. The house is decorated with sketches of trees hung up on the wall, one catches your attention, it shows a deer walking through the dense forest, you seem to percieve a faint silhouette drawn behind it, though it may just be your imagination. On your left is the kitchen, with next to it the door to your mother's bedroom."
+Desc1_11_lookAround="To your right is stone fireplace, with, above it a brick chimney, and no fire within it, in front of it is a leather sofa, facing towards it with a low table. The house is decorated with sketches of trees hung up on the wall, one catches your attention, it shows a deer walking through the dense forest, you seem to perceive a faint silhouette drawn behind it, though it may just be your imagination. On your left is the kitchen, with next to it the door to your mother's bedroom."
 Desc1_12_backInside="You go back inside, but the house is shaking, it seems very unsafe, you exit the house for now. You come back outside and the screams continue."
 AskP1_backOutside=[Default_ask, "Run towards the screams", "Run in the direction opposite to the screams"]
 
@@ -104,7 +105,7 @@ Desc1_13_runScreams="You run towards the screams, and seem to distinguish a silh
 OSay1_14_momScream=["Unknown","'AAAAAAAAAAAAHHH, SOMEONE, ANYONE HELP ME PLEASE, I BEG OF YOU!'"]
 Desc1_15_isThatSooo="That's your mother voice! As you run closer, you distinguish her more clearly, there's no doubt, that's her."
 PSay1_16_mom="MOM !"
-OSay1_17_dontCome=["Mom",'"NO !!! {0} don\'t come near me!".format(Player.name)']
+OSay1_17_dontCome=["Mom",'"NO !!! {0}, don\'t come near me!".format(Player.name)']
 Desc1_18_momDead="Another person appears behind her, wait, no, that's no person... THAT'S A TROLL ! He raises his giant fist, and crushes your agonising mother under it, without even using his sword."
 OSay1_19_trollSpeak=["Troll", "'GWWWWA-HWA-HWA-HWA, HOOMAN SPRLOOF! OH! HOOMAN!!'"]
 Desc1_20_chased="The troll sees you, and starts walking towards you."
@@ -112,10 +113,10 @@ AskP1_chased=[Default_ask, "Run away", "Face the troll"]
 EndG1_troll="The troll crushes you with his fist."
 Desc1_21_runTroll="You run in the opposite direction as fast as you can. The vision of a pool of blood with what you could assume to be human remains strikes your eyes despite their shield of tears. In an attempt to lose the beast slowly approaching behind you, you take a turn left. You see an old man, still, but completely undamaged."
 
-Desc1_22_runOpposite="You run in a direction, turning everytime you hear the screams get louder, left, and then left again. You see an old man, standing still, unphased, and completely undamaged."
+Desc1_22_runOpposite="You run in a direction, turning every time you hear the screams get louder, left, and then left again. You see an old man, standing still, unphased, and completely undamaged."
 
 OSay1_23_kamisaGo=["Kamisa", '"Child. Go inside this house, choose a weapon for your adventure. And fight."']
-Desc1_24_Insinct="For an odd reason, you do not question him a second. You enter the house and see three weapons : an old Grimoire, a wooden sword, a wooden shield. You have a feeling once you chose a weapon, you can never go back."
+Desc1_24_Insinct="For an odd reason, you do not question him a second. You enter the house and see three weapons : an old Grimoire, a wooden sword, a wooden shield. You have a feeling once you choose a weapon, you can never go back."
 AskP1_weaponChoice=["Which one do you prefer ?", "The Sword", "The Shield", "The Magical Book"]
 
 SetV1_25_sword=["Weapon", "Wooden_Sword"]
@@ -129,7 +130,7 @@ Desc1_29_preFight="A bright flash of light forces your eyes closed, and once you
 Cmbt1_30_troll=['You rush towards the troll, and engage combat.',10,['Troll1']]
 Desc1_31_hide="The troll is dead. No old man. Old man dead ? You must hide. Hide within the house. You are hidden within the house."
 Desc1_32_wait="You wait for minutes, hours, or even maybe days. You hide until you hear nothing, nothing but silence. Then you open the door, and see ashes, nothing left of such a grand city but ashes. Except the single house you were staying in, completely untouched. You go out, look around, nothing but the smell of burnt blood. You look behind you, the house is gone. You drop down on your knees."
-PSay1_33_alone="Why..? Why am I alive ? WHY AM I ALIVE ?? I hate them. I'll kill all of them. Every single one of them. I'LL OBLITERATE EVERY TROLL ON THIS PLANET !"
+PSay1_33_alone="Why..? Why am I alive ? WHY AM I ALIVE ‽‽ I hate them. I'll kill all of them. Every single one of them. I'LL OBLITERATE EVERY TROLL ON THIS PLANET !"
 EndG1_demoOver="END, for now. The rest coming soon"
 
 QOut1_weaponChoice=["SetV1_25_sword", "SetV1_26_shield", "SetV1_27_book"]
