@@ -2,7 +2,6 @@
 ## © Copyright 2022 - All rights reserved to Lamereary Industries - ширАко and SoulTaker
 
 from random import randint
-from time import sleep
 from continuity import *
 
 print('----------------------------------------\n                SETUP')
@@ -17,11 +16,12 @@ if lang in ['es','español','espanol']:
   from dialogue_es import * #si c'est espa, importe les dialogues espa
 elif lang in ['fr','français','francais']:
   from dialogue_fr import *
+elif lang=='troll':
+  from troll_fr import *
 else: 
   from dialogue_en import * #Anglais par défaut
 
 Username=input('Enter username: ')
-sleeptime=0.5
 print('----------------------------------------')
 
 def center(q,what):
@@ -131,8 +131,8 @@ def combat(desc,xp,enemies):
       print('You killed all the ennemies and won the fight!')#GG
       return
     return 1
-  while turn():#attente de une seconde chaque tour
-    sleep(sleeptime)
+  while turn():
+    pass
 		
 class Attacks:
 	def __init__(self,name,fight):#fight est une function
@@ -156,7 +156,8 @@ class Entities: # définit toutes les entités du jeu (joueur, enemis..)
 		self.attack=attack
 
 Player=Entities(Username,0,10,20,0,0,1)#Vous
-Troll1=Entities('Injured troll',0,6,6,0,0,1,Smash)#Premier ennemi
+Troll1=Entities('Injured troll',0,6,100,0,0,1,Smash)#Premier ennemi
+Troll1.HP=6#affaiblissement
 
 # Définition des fonctions qui affectent les stats avec les armes
 # Comme par exemple 'defence has a 10% chance to be doubled'
@@ -252,18 +253,18 @@ def anal(q):#anal yse les types d'action de dialogue_en
           return
         if rep=='load':
           try:
-            load()
             print('Loading last checkpoint...')
+            load()
           except ModuleNotFoundError:
             print('Savefile not found')
         else:
           try:
             return anal(eval('QOut'+q[4:])[int(rep)-1])
           except:
-            print('Answer not accepted')
+            print(Not_Accepted)
     elif q[:4]=='PSay':
       currentAction=int(q.split('_')[1])
-      say(eval(q),psay,'Player: ')
+      say(eval(q),psay,Player.name)
     elif q[:4]=='OSay':
       currentAction=int(q.split('_')[1])
       say(eval(eval(q)[1]),osay,eval(q)[0])
@@ -279,4 +280,4 @@ def anal(q):#anal yse les types d'action de dialogue_en
     return 1
 
 while anal(Next[currentAction]):
-  sleep(sleeptime)
+  input()#attendre l'input de l'utilisateur pour continuer
