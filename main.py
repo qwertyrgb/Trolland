@@ -276,6 +276,7 @@ def anal(q):#anal yse les types d'action de dialogue_en
       exec(eval(q)[0]+'='+eval(q)[1],globals())
     elif q[:4]=='EndG':
       print(eval(q))
+      print("   _____                                                              _ \n  / ____|                                                            | |\n | |  __    __ _   _ __ ___     ___      ___   __   __   ___   _ __  | |\n | | |_ |  / _` | | '_ ` _ \\   / _ \\    / _ \\  \\ \\ / /  / _ \\ | '__| | |\n | |__| | | (_| | | | | | | | |  __/   | (_) |  \\ V /  |  __/ | |    |_|\n  \\_____|  \\__,_| |_| |_| |_|  \\___|    \\___/    \\_/    \\___| |_|    (_)")
       return
     return 1
 
