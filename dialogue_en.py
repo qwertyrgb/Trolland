@@ -51,11 +51,24 @@ Satan_Profecy_fun_desc='Inflicts curse on attacked that drains 20% of their MAX_
 Justice_Sword_Name='Sword of Justice'
 Justice_Sword_Description='The sword of the Troll'
 
+#generic messages
 Welcome="Welcome to Trolland, this is a solely console high fantasy game with a cool storyline and a bunch of fights."
+Generic_youdied='You died! :('
+Generic_dead='Dead'
+Generic_target='Target: '
+Generic_win='You killed all the ennemies and won the fight!'
+Generic_attacks='attacks'
+Generic_with='with'
+Generic_weapon='Weapon:'
+Generic_attackslots='Attack slots:'
+Generic_none='None'
+Generic_loading='Loading last checkpoint...'
+Generic_nosave='Savefile not found'
 
+# Ennemy names
+Troll1_name='Injured troll'
 
 #ACTION TYPES :
-
 #"Desc" - Description - (x) - console talking to player, decribing environment
 #"OSay" - Other Say - (a,b) - character talking, content 
 #"PSay" - Player Say - (a) - main character speaking 
