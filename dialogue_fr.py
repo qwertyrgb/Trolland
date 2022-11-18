@@ -17,7 +17,7 @@ Wooden_Sword_Description='Une épée en bois dont la forme est imparfaite et qui
 Old_Grimoire_Name='Grimoire ancien'
 Old_Grimoire_Description='Un grimoire avec des caractères illisibles et des illustrations étranges. Vous sentez une légère aura magique en émaner.'
 Priest_Shield_Name='Bouclier du Prêtre'
-Priest_Shield_Description="Un bouclier avec une crois dessus et l'emblème de l'église, il semble solide."
+Priest_Shield_Description="Un bouclier avec une croix dessus et l'emblème de l'église, il semble solide."
 Blacksmith_Sword_Name='Épée du forgeron'
 Blacksmith_Sword_Description="Une épée forgée à la main gravée du nom de son créateur 'Hallburg Lyonkul'."
 Magical_Tome_Name='Tome Magique'
@@ -51,7 +51,22 @@ Satan_Profecy_fun_desc="Inflige une malédiction sur l'enemi qui draine 20% de l
 Justice_Sword_Name='Sword of Justice'
 Justice_Sword_Description='The sword of the Troll'
 
+#Messages génériques
 Welcome='Bienvenue à Trolland, ceci est un jeu de haute fantaisie uniquement sur console avec un bon scénario et pas mal de combats.'
+Generic_youdied='Vous êtes mort! :('
+Generic_dead='Mort'
+Generic_target='Cible: '
+Generic_win='Vous avez tué tous les ennemis et gagné le combat!'
+Generic_attacks='attaque'
+Generic_with='avec'
+Generic_weapon='Arme:'
+Generic_attackslots="Emplacements d'attaque"
+Generic_none='Aucun'
+Generic_loading='Chargement du dernier point de contrôle...'
+Generic_nosave='Aucun fichier de sauvegarde'
+
+#Noms d'ennemis
+Troll1_name='Troll blessé'
 
 Default_ask="Que choisissez-vous de faire?"
 Not_Accepted='Réponse invalide'
