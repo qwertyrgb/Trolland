@@ -87,12 +87,12 @@ Desc1_3_note="La nota dice: \"¿Al fin te has levantado :D ? Voy a comprar carga
 AskP1_downstairs=[Default_ask, "Ir fuera", "Volver arriba", "Mirar alrededor"]
 Desc1_10_backUpstairs="Sube las escaleras y llega a su cuarto."
 Desc1_11_lookAround="A su derecha está un hogar de piedra, con una chimenea de ladrillo encima y sin fuego en su interior, frente a él está un sofá de cuero, mirando hacia él con una mesa baja. La casa está decorada con garabatos de árboles colgados a la pared, uno le llama la atención, muestra un ciervo caminando por el denso bosque, le parece percibir una tenue silueta dibujada detrás de él, aunque puede que solo sea su imaginación. A su izquierda está la cocina, con al lado la puerta del dormitorio de su madre."
-Desc1_12_backInside="You go back inside, but the house is shaking, it seems very unsafe, you exit the house for now. You come back outside and the screams continue."
-AskP1_backOutside=[Default_ask, "Run towards the screams", "Run in the direction opposite to the screams"]
+Desc1_12_backInside="Vuelve dentro, pero la casa está temblando, parece muy insegura, usted sale de la casa por ahora. Usted vuelve a salir y los gritos siguen."
+AskP1_backOutside=[Default_ask, "Correr hacia los gritos", "Correr en la dirección opuesta a los gritos."]
 
 QOut1_room=["Desc1_2_downstairs", "Desc1_4_books"]
 
-Desc1_8_outside="You go through the large, dark, oak door and arrive on a gravel field, surrounded with tall green grass. You take a deep breath as you feel the grass-odored air freshen your lungs. Around yours are a number of similar looking houses, with small houses and bright flowers in their lawn. You see a child playing in the house in front of yours, how innocent he looks..."
+Desc1_8_outside="Penetra por la gran puerta oscura de madera y llega a un campo de grava, rodeado por verdes hierbas altas. Inspira You take a deep breath as you feel the grass-odored air freshen your lungs. Around yours are a number of similar looking houses, with small houses and bright flowers in their lawn. You see a child playing in the house in front of yours, how innocent he looks..."
 Desc1_9_boom="A sudden flash of light blinds your eyes, followed by a deafening detonation and shock wave, making you lose balance and fall back. You hear screams through the ringing of your ears coming from South-East : that's where the mana store is !"
 AskP1_boom=[Default_ask, "Go back inside the house", "Run towards the mana store", "Run in the direction opposite to the sound"]
 
