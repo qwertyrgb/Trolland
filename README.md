@@ -1,8 +1,8 @@
 # Trolland
-Ce jeu va être génial
+Ce jeu est en beta
 
 # HOWTO
-Pour jouer à ce jeu, copiez tous les fichiers .py dans votre pc.
+Pour jouer à ce jeu, téléchargez Trolland.zip, unzippez le et ouvrez main.py.
 
 Le fichier main.py est le code principal du jeu
 
