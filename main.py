@@ -4,17 +4,15 @@
 from random import randint
 from continuity import *
 
-import os
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-
 try:
   from pygame import mixer
   playmusic=True
   mixer.init()
   mixer.Channel(0).play(mixer.Sound('lol.mp3'))
+  import os
+  os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 except ModuleNotFoundError:
-  print("Vous jouerez sans tah la musique, c'est vla dommage")
-  print('Installez le module pygame pour avoir la musique')
+  print("Vous jouerez sans la musique, c'est dommage, installez le module pygame pour avoir la musique')
   playmusic=False
 
 decobar='----------------------------------------'
