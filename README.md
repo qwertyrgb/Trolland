@@ -1,5 +1,5 @@
 # Trolland
-Ce jeu est en beta
+Ce jeu est en beta test
 
 # HOWTO
 Pour jouer à ce jeu, téléchargez Trolland.zip, unzippez le et ouvrez main.py.
