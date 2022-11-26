@@ -38,4 +38,6 @@ Next=['Desc1_1_room', #boot
       'EndG1_demoOver', #33
       'OSay1_28_kamisaFight', #34
       'OSay1_28_kamisaFight' #35
-     ]
+]
+for i in Next:
+    assert i[:4] in ['Desc','OSay','PSay','SetV','Cmbt'] and len(i.split('_'))==3 or i[:4] in ['AskP','EndG'], f"C'est qui le dev qui a mal écrit {i}?"
