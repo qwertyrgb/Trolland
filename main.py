@@ -19,20 +19,15 @@ decobar='----------------------------------------'
 print(decobar)
 print('                SETUP')
 try: #import basique de sauvegarde
-  from saves import *
-  print('Loading save...')
-except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
-	print('No save detected')
+   print('Loading save...')
+   from saves import *
+except ModuleNotFoundError:print('No save detected')
 
-lang=input('Enter language: ').lower() #demande la langue, puis met l'input en minuscule
-match lang:
+match input('Enter language: ').lower():
   case 'es'|'español'|'espanol':from dialogue_es import *
   case 'fr'|'français'|'francais':from dialogue_fr import *
   case 'troll':from troll_fr import *
   case _:from dialogue_en import * #Anglais par défaut
-
-Username=input('Enter username: ')
-print(decobar)
 
 def center(q,what):
 	'''centre un texte horizontalement'''
@@ -57,9 +52,7 @@ def desc(who,msg):#description
 	print('⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n∥{0[0]}∥                                  \n∥{0[1]}∥                                   \n∥{0[2]}∥                                   \n∥{0[3]}∥                                   \n∥{0[4]}∥ \n∥{0[5]}∥\n∥{0[6]}∥\n∥{0[7]}∥\n∥{0[8]}∥\n∥{0[9]}∥ \n⊏＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝⊐\n'.format(msg))
 
 def say(msg,what,who=''):#dire des messages avec une décoration
-	q=[]
-	i=30
-	prev=0
+	q,i,prev=[],30,0
 	while i<len(msg):
 		while msg[i]!=' ':i-=1#ne pas couper un texte au milieu d'un mot
 		q.append(msg[prev:i])
@@ -137,15 +130,12 @@ def combat(desc,xp,enemies):
       target=enemies[int(rep)-1]#choisit la cible
     else:
       target=enemies[0]#si il y a un seul ennemi, le joueur n'aura pas le choix
-    pickattack='Attack: '+'\t'.join(['. '.join([str(i),Attack_Slots[i-1].name]) for i in range(1,len(Attack_Slots)+1)])+'\n'
-    rep=input(pickattack)
+    rep=input(pickattack:='Attack: '+'\t'.join(['. '.join([str(i),Attack_Slots[i-1].name]) for i in range(1,len(Attack_Slots)+1)])+'\n')
     while rep=='stats':
       stats()
       rep=input(pickattack)
-    if rep=='exit':
-      exit_game()
-    while not rep.isdigit() or int(rep)<1 or int(rep)>3:
-      rep=input(pickattack)
+    if rep=='exit':exit_game()
+    while not rep.isdigit() or int(rep)<1 or int(rep)>3:rep=input(pickattack)
     target.HP-=Attack_Slots[int(rep)-1].fight(target)#Finalement, vous attaquez
     print(Player.name,Generic_attacks,Enemy.name,Generic_with,Attack_Slots[int(rep)].name,'!')
     if all(i.HP<=0 for i in enemies):
@@ -157,29 +147,21 @@ def combat(desc,xp,enemies):
     pass
 		
 class Attacks:
-	def __init__(self,name,fight):#fight est une function
-		self.name=name
-		self.fight=fight
+	def __init__(s,name,fight):#fight est une function
+		s.name,s.fight=name,fight
 
 Flame=Attacks('Flame',lambda x:x.HPMAX//2)#Fait des dégats de la moitié de l'HPMAX
 Slash=Attacks('Slash',lambda x:x.HPMAX//2)
 Smash=Attacks('Smash',lambda x:3*x.HPMAX//10)#fait 30% de l'HPMAX de dégats
 
 class Entities: # définit toutes les entités du jeu (joueur, enemis..)
-	def __init__(self,name,DEF,ATQ,HPMAX,MP,STA,LVL,attack=''):#certaines entités n'ont pas d'attaque prédéfinie
-		self.name=name
-		self.DEF=DEF
-		self.ATQ=ATQ
-		self.HP=HPMAX
-		self.HPMAX=HPMAX
-		self.MP=MP
-		self.STA=STA
-		self.LVL=LVL
-		self.attack=attack
+	def __init__(s,n,D,A,H,M,S,L,a=''):#certaines entités n'ont pas d'attaque prédéfinie
+		s.name,s.DEF,s.ATQ,s.HP,s.HPMAX,s.HP,s.MP,s.STA,s.LVL,s.attack=n,n,D,A,H,H,M,S,L,a
 
-Player=Entities(Username,0,10,20,0,0,1)#Vous
+Player=Entities(Username:=input('Enter username: '),0,10,20,0,0,1)#Vous
 Troll1=Entities(Troll1_name,0,6,100,0,0,'??',Smash)#Premier ennemi
 Troll1.HP=6#affaiblissement
+print(decobar)
 
 # Définition des fonctions qui affectent les stats avec les armes
 # Comme par exemple 'defence has a 10% chance to be doubled'
@@ -218,16 +200,12 @@ def writebonus(x):# écrit les bonus
     return x[1]
 
 class Weapons: # définit toutes les armes du jeu
-  def __init__(self,tier,name,description,bonus={}): # Pas forcément de bonus, d'ou le bonus={} (si aucune valeur n'est donnée, bonus sera {})
+  def __init__(s,t,n,d,b={}): # Pas forcément de bonus, d'ou le b={} (si aucune valeur n'est donnée, bonus sera {})
     '''Initialise ( __init__ ) les armes du jeu'''
-    self.tier=tier
-    self.name=name
-    self.description=description
-    self.bonus=bonus
-
-  def info(self):# ex: Rare tier: Magical Tome {MP +5, ATQ +10} \n this weapon does emotional damage
+    s.tier,s.name,s.description,s.bonus=t,n,d,b
+  def info(s):# ex: Rare tier: Magical Tome {MP +5, ATQ +10} \n this weapon does emotional damage
     '''Donne les informations sur l'arme sous forme de GUI'''
-    print(self.name+', Tier:',self.tier+'\n'+', '.join(tuple(': '.join((i,writebonus(self.bonus[i]))) for i in self.bonus))+'\n'+self.description)
+    print(s.name+', Tier:',s.tier+'\n'+', '.join(tuple(': '.join((i,writebonus(s.bonus[i]))) for i in s.bonus))+'\n'+self.description)
 
 Wooden_Shield=Weapons(Common_Tier,Wooden_Shield_Name,Wooden_Shield_Description) #pas de bonus
 Wooden_Sword=Weapons(Common_Tier,Wooden_Sword_Name,Wooden_Sword_Description)
@@ -253,9 +231,7 @@ try: #import basique de sauvegarde
   load()
 except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
   print(Welcome)
-  Weapon=''
-  Attack_Slots=['']*3
-  currentAction=0
+  Weapon,Attack_Slots,currentAction='',['']*3,0
 
 Generic_gameover="   _____                                                              _ \n  / ____|                                                            | |\n | |  __    __ _   _ __ ___     ___      ___   __   __   ___   _ __  | |\n | | |_ |  / _` | | '_ ` _ \\   / _ \\    / _ \\  \\ \\ / /  / _ \\ | '__| | |\n | |__| | | (_| | | | | | | | |  __/   | (_) |  \\ V /  |  __/ | |    |_|\n  \\_____|  \\__,_| |_| |_| |_|  \\___|    \\___/    \\_/    \\___| |_|    (_)"
 
@@ -305,5 +281,4 @@ def analyse(q):
           return
     return 1
 
-while analyse(Next[currentAction]):
-  input()#attendre l'input de l'utilisateur pour continuer
+while analyse(Next[currentAction]):input()#attendre l'input de l'utilisateur pour continuer
