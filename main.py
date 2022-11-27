@@ -12,7 +12,7 @@ try:
   import os
   os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 except ModuleNotFoundError:
-  print("Vous jouerez sans la musique, c'est dommage, installez le module pygame pour avoir la musique')
+  print("Vous jouerez sans la musique, c'est dommage, installez le module pygame pour avoir la musique")
   playmusic=False
 
 decobar='----------------------------------------'
@@ -25,14 +25,11 @@ except ModuleNotFoundError: #si non sauvegardé, pas de fichier de sauvegarde
 	print('No save detected')
 
 lang=input('Enter language: ').lower() #demande la langue, puis met l'input en minuscule
-if lang in ['es','español','espanol']:
-  from dialogue_es import * #si c'est espa, importe les dialogues espa
-elif lang in ['fr','français','francais']:
-  from dialogue_fr import *
-elif lang=='troll':
-  from troll_fr import *
-else: 
-  from dialogue_en import * #Anglais par défaut
+match lang:
+  case 'es'|'español'|'espanol':from dialogue_es import *
+  case 'fr'|'français'|'francais':from dialogue_fr import *
+  case 'troll':from troll_fr import *
+  case _:from dialogue_en import * #Anglais par défaut
 
 Username=input('Enter username: ')
 print(decobar)
@@ -265,48 +262,47 @@ Generic_gameover="   _____                                                      
 def analyse(q):
     '''Analyse les types d'action de dialogue.py'''
     global currentAction
-    if q[:4]=='Desc':
-        say(eval(q),desc)
-        currentAction=int(q.split('_')[1])#voir continuity.py
-    elif q[:4]=='AskP':
-        print()
-        print(eval(q)[0],end='\t')#la question
-        rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(1,len(eval(q)))])+'\n').lower()#met des nombres avec les options
-        #easter(rep)
-        while rep=='stats':
-          print('Your stats:')
-          stats()
-          return 1
-        if rep in ['exit','quit','quitter','sortir','salir']:
-          exit_game()
-        if rep in ['load','charger','cargar']:
-          try:
-            print(Generic_loading)
-            load()
-          except ModuleNotFoundError:
-            print(Generic_nosave)
-        else:
-          try:
-            return analyse(eval('QOut'+q[4:])[int(rep)-1])
-          except:
-            print(Not_Accepted)
-    elif q[:4]=='PSay':
-      currentAction=int(q.split('_')[1])
-      say(eval(q),psay,Player.name)
-    elif q[:4]=='OSay':
-      currentAction=int(q.split('_')[1])
-      say(eval(eval(q)[1]),osay,eval(q)[0])
-    elif q[:4]=='Cmbt':
-      if playmusic:mixer.Channel(0).play(mixer.Sound('raid.mp3'))
-      combat(*eval(q))
-      currentAction=int(q.split('_')[1])
-    elif q[:4]=='SetV':
-      currentAction=int(q.split('_')[1])
-      exec(eval(q)[0]+'='+eval(q)[1],globals())
-    elif q[:4]=='EndG':
-      print(eval(q))
-      print(Generic_gameover)
-      return
+    match q[:4]:
+        case 'Desc':
+            say(eval(q),desc)
+            currentAction=int(q.split('_')[1])#voir continuity.py
+        case 'AskP':
+            print()
+            print(eval(q)[0],end='\t')#la question
+            rep=input('\t'.join(['. '.join([str(i),eval(q)[i]]) for i in range(1,len(eval(q)))])+'\n').lower()#met des nombres avec les options
+            #easter(rep)
+            while rep=='stats':
+              print('Your stats:')
+              stats()
+              return 1
+            match rep:
+                case 'exit'|'quit'|'quitter'|'sortir'|'salir':exit_game()
+                case 'load'|'charger'|'cargar':
+                    try:
+                        print(Generic_loading)
+                        load()
+                    except ModuleNotFoundError:
+                        print(Generic_nosave)
+                case _:
+                    try:return analyse(eval('QOut'+q[4:])[int(rep)-1])
+                    except:print(Not_Accepted)
+        case 'PSay':
+          currentAction=int(q.split('_')[1])
+          say(eval(q),psay,Player.name)
+        case 'OSay':
+          currentAction=int(q.split('_')[1])
+          say(eval(eval(q)[1]),osay,eval(q)[0])
+        case 'Cmbt':
+          if playmusic:mixer.Channel(0).play(mixer.Sound('raid.mp3'))
+          combat(*eval(q))
+          currentAction=int(q.split('_')[1])
+        case 'SetV':
+          currentAction=int(q.split('_')[1])
+          exec(eval(q)[0]+'='+eval(q)[1],globals())
+        case 'EndG':
+          print(eval(q))
+          print(Generic_gameover)
+          return
     return 1
 
 while analyse(Next[currentAction]):
